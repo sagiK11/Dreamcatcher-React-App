@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -28,6 +28,7 @@
   color: #61dafb;
 }
 
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +36,39 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+@media screen and (max-width: 670px) {
+  .section-1 {
+    min-height: 500px;
+  }
+}
+
+.section-1{
+  background:url("./img/bg_1.JPG");
+  background-size: cover;
+  background-position-y: center;
+  min-height: 1000px;
+
+}
+.welcome-title{
+  font-size: 6.2rem;
+  font-weight: bolder;
+}
+
+.section {
+  padding-top: 4vw;
+  padding-bottom: 4vw;
+}
+
+h3{
+  margin:0;
+}
+
+.about-me{
+  background-size: cover;
+  background-position-y: center;
+  min-height: 1000px;
+
+
 }
