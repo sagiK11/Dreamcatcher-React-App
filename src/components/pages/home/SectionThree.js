@@ -1,5 +1,4 @@
 import React from 'react'
-import Img1 from "../../../img/h_1.jpg"
 
 function SectionThree() {
     return (
@@ -9,14 +8,14 @@ function SectionThree() {
 
                     <form action="" >
                         <div className="input-field ">
-                            <label for="email" className="">Email</label>
+                            <label htmlFor="email" className="">Email</label>
                             <input type="email" id="email" />
                             <i className="material-icons prefix" >email</i>
 
                         </div>
 
                         <div className="input-field">
-                            <label for="message">Your message</label>
+                            <label htmlFor="message">Your message</label>
                             <textarea name="message" dir="rtl" className="materialize-textarea"></textarea>
                             <i className="material-icons prefix ">message</i>
 

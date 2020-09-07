@@ -54,6 +54,7 @@
 .welcome-title{
   font-size: 6.2rem;
   font-weight: bolder;
+  color: #ffe7d9;
 }
 
 .section {
@@ -71,4 +72,7 @@ h3{
   min-height: 1000px;
 
 
+}
+.dream-edges{
+  background-color: #ffe7d9;
 }

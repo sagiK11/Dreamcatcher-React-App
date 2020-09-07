@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
     return (
-        <footer className="page-footer pink lighten-5">
+        <footer className="page-footer dream-edges">
             <div className="container">
                 <div className="row">
 
@@ -34,7 +34,7 @@ function Footer() {
                 </div>
             </div>
 
-            <div className="footer-copyright pink lighten-4">
+            <div className="footer-copyright">
                 <div className="container center-align  black-text">
                     &copy; 2020 Dream Catcher by Hila
                 </div>

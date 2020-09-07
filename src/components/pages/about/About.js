@@ -3,6 +3,7 @@ import MainSection from "./MainSection"
 import { Parallax } from "react-parallax"
 import Img1 from "../../../img/img_5.JPG"
 import Img2 from "../../../img/img_8.JPG"
+import Footer from "../home/Footer"
 
 
 
@@ -23,6 +24,7 @@ class About extends Component {
                     <div style={{ height: 500, }}>
                     </div>
                 </Parallax>
+                <Footer />
             </div>
         );
     }
