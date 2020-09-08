@@ -2,17 +2,42 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 import { addDreamcatcher } from "../../store/actions/dreamActions"
 import { Redirect } from "react-router-dom"
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
+
+
+
+
 
 class AddDreamcatcher extends Component {
     state = {
         img: "",
         model: "",
         price: null,
+        diameter: "",
+        category: "",
+        amount: "",
+        discription: "",
+
+
     }
     handleChange = (event) => {
-        this.setState({
-            [event.target.id]: event.target.value
-        })
+        if (event.target == null) {
+            if (event.value.includes('0')) {
+                this.setState({
+                    diameter: event.value,
+                })
+            } else {
+                this.setState({
+                    category: event.value,
+                })
+            }
+
+        } else {
+            this.setState({
+                [event.target.id]: event.target.value
+            })
+        }
     }
 
     handleSubmit = (event) => {
@@ -20,12 +45,25 @@ class AddDreamcatcher extends Component {
         this.props.addDreamcatcher(this.state)
     }
 
+
+
     render() {
         const adminEmail = "sagi@gmail.com"
         const { auth } = this.props;
 
         if (!auth.uid || auth.email !== adminEmail)
             return <Redirect to="/" />
+
+        const diameterOptions = [
+            '30', '40', '50', '60', '70'
+        ];
+        const diamDefOption = diameterOptions[0];
+
+        const categoryOptions = [
+            'מחזיק מפתחות', 'מפית', 'מארז', 'לוכד חלומות', 'סט'
+        ]
+        const catDefOption = categoryOptions[0];
+
 
         return (
             <div className="container" >
@@ -41,7 +79,6 @@ class AddDreamcatcher extends Component {
                         <input id="model" onChange={this.handleChange}></input>
                     </div>
 
-
                     <label htmlFor="price" style={labelStyle}>מחיר</label>
                     <div className="input-field" style={inputStyle}>
                         <input id="price" onChange={this.handleChange}></input>
@@ -49,15 +86,14 @@ class AddDreamcatcher extends Component {
 
                     <label htmlFor="diameter" style={labelStyle}>קוטר</label>
                     <div className="input-field" style={inputStyle}>
-                        <input id="diameter" onChange={this.handleChange}></input>
+                        <Dropdown options={diameterOptions} onChange={this.handleChange}
+                            value={diamDefOption} placeholder="Select an option" />
                     </div>
-
-                    <label htmlFor="category" style={labelStyle}>קטגוריה</label>
+                    <label htmlFor="diameter" style={labelStyle}>קטגוריה</label>
                     <div className="input-field" style={inputStyle}>
-                        <input id="category" onChange={this.handleChange}></input>
+                        <Dropdown options={categoryOptions} onChange={this.handleChange}
+                            value={catDefOption} placeholder="Select an option" />
                     </div>
-
-
 
                     <label htmlFor="amount" style={labelStyle}>כמות במלאי</label>
                     <div className="input-field" style={inputStyle}>
@@ -69,18 +105,11 @@ class AddDreamcatcher extends Component {
                         <input id="description" onChange={this.handleChange}></input>
                     </div>
 
-
-
-
-
-
-
-
                     <div className="input-field">
                         <button className="btn pink lighten-1">הוסף</button>
                     </div>
                 </form>
-            </div>
+            </div >
         );
     }
 

@@ -29,10 +29,10 @@ const MainSection = () => {
                     <p className="flow-text">יש אפשרות לבצע הזמנות אישיות ולעצב ביחד איתי את לוכד החלומות והסטים הקסומים שתמיד חלמת עליו.</p>
                     <p className="flow-text">ניתן ליצור קשר באמצעות:</p>
                     <ul className="flow-text">
-                        <li>עמוד הפייסבוק</li>
-                        <li>עמוד האינסטגרם</li>
-                        <li>בטלפון 050-8829551</li>
-                        <li>אימייל - hilash95@gmail.com</li>
+                        <li><p>עמוד הפייסבוק</p></li>
+                        <li><p>עמוד האינסטגרם</p></li>
+                        <li><p>בטלפון 050-8829551</p></li>
+                        <li><p>אימייל - hilash95@gmail.com</p></li>
                         <li style={iconStyle}>
                             <div className="row">
                                 <div className="col s6 m6 l4 offset-l2">

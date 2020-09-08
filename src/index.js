@@ -12,6 +12,8 @@ import { reduxFirestore, getFirestore, createFirestoreInstance } from 'redux-fir
 import { ReactReduxFirebaseProvider, getFirebase } from 'react-redux-firebase'
 import fbConfig from './config/firebaseConfig'
 import firebase from 'firebase/app'
+// import 'semantic-ui-css/semantic.min.css'
+
 
 
 const store = createStore(
