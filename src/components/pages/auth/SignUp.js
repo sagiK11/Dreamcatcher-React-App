@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 import { signUp } from "../../../store/actions/authActions"
 import { connect } from "react-redux"
 import { Redirect } from "react-router-dom"
+import Footer from '../home/Footer'
+import "./style.css"
+
+import image from "../../../img/img_7.JPG"
+
+
 
 class SignUp extends Component {
     state = {
@@ -23,34 +29,45 @@ class SignUp extends Component {
     render() {
         const { auth, authError } = this.props;
         if (auth.uid) return <Redirect to="/" />
-        console.log(authError)
+
         return (
-            <div className="container">
-                <form className="white" onSubmit={this.handleSubmit}>
-                    <h5 className="grey-text text-darken-3">Sign Up</h5>
-                    <div className="input-field">
-                        <label htmlFor="email">Email</label>
-                        <input type="email" id='email' onChange={this.handleChange} />
-                    </div>
-                    <div className="input-field">
-                        <label htmlFor="password">Password</label>
-                        <input type="password" id='password' onChange={this.handleChange} />
-                    </div>
-                    <div className="input-field">
-                        <label htmlFor="firstName">First Name</label>
-                        <input type="text" id='firstName' onChange={this.handleChange} />
-                    </div>
-                    <div className="input-field">
-                        <label htmlFor="lastName">Last Name</label>
-                        <input type="text" id='lastName' onChange={this.handleChange} />
-                    </div>
-                    <div className="input-field">
-                        <button className="btn pink lighten-1 z-depth-0">Sign Up</button>
-                        <div className="center red-text">
-                            {authError ? <p>{authError}</p> : null}
+            <div>
+                <div className="container containerStyle">
+                    <div className="row">
+                        <SideImage img={image} />
+                        <div className="col s12 m6 l6 z-depth-4  signInStyle">
+                            <div style={{ padding: "3rem 0 4rem 0" }}>
+                                <form className="white" onSubmit={this.handleSubmit} >
+                                    <WelcomeTitle />
+                                    <div className="input-field">
+                                        <label htmlFor="email">אימייל</label>
+                                        <input type="email" id='email' onChange={this.handleChange} />
+                                    </div>
+                                    <div className="input-field">
+                                        <label htmlFor="password">סיסמה</label>
+                                        <input type="password" id='password' onChange={this.handleChange} />
+                                    </div>
+                                    <div className="input-field">
+                                        <label htmlFor="firstName">שם פרטי</label>
+                                        <input type="text" id='firstName' onChange={this.handleChange} />
+                                    </div>
+                                    <div className="input-field">
+                                        <label htmlFor="lastName">שם משפחה</label>
+                                        <input type="text" id='lastName' onChange={this.handleChange} />
+                                    </div>
+                                    <div className="input-field" style={{ paddingTop: "2rem" }}>
+                                        <button className="btn auth-button">הרשמה</button>
+                                        <div className="center red-text">
+                                            {authError ? <p>{authError}</p> : null}
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
+
                     </div>
-                </form>
+                </div>
+                <Footer />
             </div>
         )
     }
@@ -68,5 +85,24 @@ const mapStateToProps = (state) => {
         authError: state.auth.authError,
     }
 }
+const WelcomeTitle = () => {
+    return (
+        <div className="center" dir='rtl'>
+            <h2>
+                ברוך הבא!
+            </h2>
+        </div>
+    );
+}
+
+const SideImage = (props) => {
+    return (
+        <div className="col s12 m6 l6">
+            <img src={props.img} alt="לוכד חלומות" className="responsive-img imgStyle" />
+        </div>
+    );
+}
+
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

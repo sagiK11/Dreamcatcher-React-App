@@ -12,8 +12,7 @@ const SignOutLinks = () => {
             <li> <NavLink to="/personal-orders" className="black-text"> הזמנות אישיות</NavLink> </li>
             <li> <NavLink to="/shop" className="black-text"> חנות </NavLink></li>
             <li> <NavLink to="/" className="black-text"> בית </NavLink></li>
-
-        </ul>
+        </ul >
     );
 };
 export default SignOutLinks;

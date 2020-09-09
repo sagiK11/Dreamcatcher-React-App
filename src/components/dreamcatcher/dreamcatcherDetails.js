@@ -90,9 +90,6 @@ export default compose(
 )(DreamcatcherDetails)
 
 
-const borderStyle = {
-    border: "2px solid black"
-}
 const buttonStyle = {
     backgroundColor: "black",
     color: "white",

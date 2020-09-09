@@ -9,22 +9,13 @@ function SectionOne() {
             <section className="section-2  section">
                 <div className="row ">
                     <div className="col s12 l3">
-                        <img src={Img1} alt="תמונה" className="responsive-img" />
+                        <img src={Img1} alt="תמונה" className="responsive-img" style={imgStyle} />
                     </div>
                     <div className="col s12 l6" >
-                        <p className=" black-text text-darken-4 flow-text" dir="rtl">היי,
-                        קוראים לי הילה, אני בת 24 וכל חיי נשמתי עיצוב ופריטים שהם מעבודת יד.
-                        את לוכדי החלומות שלי התחלתי להכין לפני כשלוש שנים כשהתחלתי ללמוד כלכלה וחשבונאות באוניברסטית בן גוריון.
-                        עברתי לגור בדירה בבאר שבע והיה לי חשוב להפוך את הדירה לאווירה ביתית ומלאה בוהו שייק, התקציב היה דל אז התחלתי להכין מלא פרטים בעבודת יד.
-                        התאהבתי בהכנת לוכדי חלומות ובעקבות כך פתחתי את "לוכדי החלומות הילה" מקווה שתאהבו את העיצובים.
-                        אשמח לעזור לכם לעצב את הדגם המושלם לחדר או לכל פינה בבית
-                        פנויה לשאלות בעמוד האינסטגרם או הפייסבוק
-                        ובפלאפון - 050-8829551.
-                        לוכדי החלומות של הילה - dreamcatcherbyhila
-                        </p>
+                        <Text />
                     </div>
                     <div className="col s12 l3">
-                        <img src={Img4} alt="תמונה" className="responsive-img" />
+                        <img src={Img4} alt="תמונה" className="responsive-img" style={imgStyle} />
                     </div>
                 </div>
             </section>
@@ -33,3 +24,18 @@ function SectionOne() {
 }
 
 export default SectionOne
+
+const imgStyle = {
+    borderRadius: "5%",
+}
+
+const Text = () => {
+    return (
+
+        <p className=" black-text text-darken-4 flow-text" dir="rtl">
+            ברוכים הבאים לעולם קסום של לוכדי חלומות בעבודת יד. כאן תוכלו למצוא ולהתרשם ממבחר דגמים של לוכדי חלומות מכל הסוגים.  בחנות אשר נמצאת  <a href="/shop">כאן</a> באתר ישנו מגוון
+            רחב של דגמי לוכדי חלומות. אם תמיד חלמת על סט קסום של לוכדי חלומות מעל המיטה תוכלי לבחור ממגוון רחב של דגמים ואם עדין לא תמצאי תמיד ניתן לפנות אלי ונעצב ביחד איתך את הסגנון שמתאים לך.
+            מעבר לסטים הקסומים, קיימים עשרות דגמים של לוכדי חלומות ואם לא תמצאי עדין את הלוכד שמוצא חן בעיניך תמיד אפשר לעצב ביחד איתי.
+        </p>
+    );
+}

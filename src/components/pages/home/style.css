@@ -1,0 +1,16 @@
+
+
+
+
+.section-1{
+    background:url("../../../img/bg_1.JPG");
+    background-size: cover;
+    background-position-y: center;
+    min-height: 1000px;
+  
+  }
+  .welcome-title{
+    font-size: 6.0rem;
+    font-weight: bolder;
+    color: #ffe7d9;
+  }

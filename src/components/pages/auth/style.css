@@ -1,0 +1,34 @@
+
+
+.auth-button{
+    font-size: 1.6rem;
+    height: 2em;
+    width: 100%;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    background-color: black;
+}
+
+
+.containerStyle {
+    padding-top: 2em;
+
+}
+.signInStyle {
+    border-radius: 5%;
+    height: 37rem;
+
+}
+
+ .buttonStyle {
+    font-size: 1.6rem;
+    height: 2em;
+    width: 100%;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    background-color: black;
+}
+
+ .imgStyle  {
+    border-radius: 5%;
+}

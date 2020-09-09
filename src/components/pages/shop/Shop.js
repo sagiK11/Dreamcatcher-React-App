@@ -31,6 +31,7 @@ export default compose(
 )(Shop)
 
 const MainSection = ({ dreamcatchers }) => {
+    console.log(dreamcatchers);
     return (
         <div >
             <div className="center">
@@ -53,7 +54,7 @@ const Collection = ({ dreamcatchers }) => {
             {dreamcatchers && dreamcatchers.map((item) => {
                 index++;
                 return (
-                    <AnimateGroup play key={item.id}>
+                    <AnimateGroup play key={item.id} >
                         <Animate delay={0.5} start={{ transform: 'translate(0, 170px)' }}
                             end={{ transform: 'translate(0, 0)' }} sequenceIndex={index} duration={1.5}>
                             <Link to={"/dreamcatcher/" + item.id} >

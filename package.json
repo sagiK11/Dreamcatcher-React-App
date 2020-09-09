@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^7.2.1",
     "and": "0.0.3",
     "firebase": "^7.19.1",
+    "jss-rtl": "^0.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-dropdown": "^1.8.0",

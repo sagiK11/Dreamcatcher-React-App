@@ -14,6 +14,7 @@ const NavLinks = () => {
       <li> <NavLink to="/shop" className="black-text"> חנות </NavLink></li>
       <li> <NavLink to="/" className="black-text"> בית </NavLink></li>
 
+
     </ul>
   );
 };

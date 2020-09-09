@@ -8,18 +8,15 @@ function SectionThree() {
 
                     <form action="" >
                         <div className="input-field ">
-                            <label htmlFor="email" className="">Email</label>
-                            <input type="email" id="email" />
                             <i className="material-icons prefix" >email</i>
-
+                            <label htmlFor="email" className="">אימייל</label>
+                            <input type="email" id="email" />
                         </div>
 
                         <div className="input-field">
-                            <label htmlFor="message">Your message</label>
-                            <textarea name="message" dir="rtl" className="materialize-textarea"></textarea>
                             <i className="material-icons prefix ">message</i>
-
-
+                            <label htmlFor="message">ההודעה שלך</label>
+                            <textarea name="message" dir="rtl" className="materialize-textarea"></textarea>
                         </div>
                     </form>
                 </div>
