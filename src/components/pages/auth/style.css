@@ -1,12 +1,22 @@
 
 
-.auth-button{
+.auth-button {
     font-size: 1.6rem;
     height: 2em;
     width: 100%;
     font-weight: bold;
     letter-spacing: 0.1em;
     background-color: black;
+}
+
+.auth-button:hover{
+    font-size: 1.6rem;
+    height: 2em;
+    width: 100%;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    background-color: white;
+    color: black
 }
 
 
@@ -20,7 +30,7 @@
 
 }
 
- .buttonStyle {
+ .buttonStyle{
     font-size: 1.6rem;
     height: 2em;
     width: 100%;

@@ -10,11 +10,11 @@ import IconButton from '@material-ui/core/IconButton';
 
 const Dreamcatcher = ({ dreamcatcher }) => {
     return (
-        <div className="col s10 m10 l12" style={divStyle} dir="rtl">
+        <div className="col s10 m10 l2" >
             <div className="center">
                 <Card variant="outlined" >
                     <CardActionArea >
-                        <img src={dreamcatcher.img} alt="" className="responsive-img" />
+                        <img src={dreamcatcher.img} alt="לוכד חלומות" className="responsive-img" />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="h2" className="center">
                                 {dreamcatcher.model}

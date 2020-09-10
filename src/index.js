@@ -12,8 +12,9 @@ import { reduxFirestore, getFirestore, createFirestoreInstance } from 'redux-fir
 import { ReactReduxFirebaseProvider, getFirebase } from 'react-redux-firebase'
 import fbConfig from './config/firebaseConfig'
 import firebase from 'firebase/app'
-// import 'semantic-ui-css/semantic.min.css'
-
+import { create } from 'jss';
+import rtl from 'jss-rtl';
+import { StylesProvider, jssPreset, createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 
 const store = createStore(
@@ -40,10 +41,23 @@ const rrfProps = {
 
 
 
+
+const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
+const theme = createMuiTheme({
+  direction: 'rtl',
+});
+
+
 ReactDOM.render(
   <Provider store={store}>
     <ReactReduxFirebaseProvider {...rrfProps}>
-      <App />
+      <StylesProvider jss={jss}>
+        <ThemeProvider theme={theme}>
+
+          <App />
+
+        </ThemeProvider>
+      </StylesProvider>
     </ReactReduxFirebaseProvider>
   </Provider>,
   document.getElementById('root')

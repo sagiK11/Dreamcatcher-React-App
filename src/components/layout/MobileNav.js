@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux"
 import { signOut } from "../../store/actions/authActions"
-
+import "./style.css"
 
 class MobileNav extends Component {
   render() {
@@ -11,19 +11,19 @@ class MobileNav extends Component {
         <a href="/" className="sidenav-trigger" data-target="mobile-menu">
           <i className="material-icons black-text">menu</i>
         </a>
-        <ul className="sidenav grey lighten-2" id="mobile-menu" dir="rtl">
+        <ul className="sidenav side-nav" id="mobile-menu" style={{ postion: "fixed", zIndex: "4000" }} >
           <li> <a href="/" className="black-text"> בית </a></li>
-          <li> <a href="/shop" className="black-text">  חנות </a> </li>
+          <li > <a href="/shop" className="black-text">  חנות </a> </li >
           <li> <a href="/personal-orders" className="black-text"> הזמנות אישיות </a> </li>
           <li> <a href="/shipping-policy" className="black-text"> מדיניות משלוחים </a></li>
           <li> <a href="/about" className="black-text">קצת עליי </a></li>
           {links}
-        </ul>
-      </div >
+        </ul >
+      </div>
     );
   }
-}
 
+}
 
 
 const SignedOutLinks = () => {
@@ -48,5 +48,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(null, mapDispatchToProps)(MobileNav);
+
 
 

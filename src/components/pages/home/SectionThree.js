@@ -1,42 +1,27 @@
 import React from 'react'
+import Box from '@material-ui/core/Box';
+
 
 function SectionThree() {
     return (
-        <section className="section container">
-            <div className="row" >
-                <div className="col s12 l5 ">
+        <div className="center">
+            <Box display="flex" flexWrap="wrap" p={1} m={1} bgcolor="background.paper" justifyContent="center">
+                <Box justifyContent="flex-start">
+                    <h3 className="black-text text-darken-4" >רוצה לשמוע על מבצעים סודיים?</h3>
+                    <h4>הצטרפי עכשיו למועדון החברות!</h4>
+                </Box>
+                <Box justifyContent="flex-end">
+                    <h5>איך נרשמים?</h5>
+                    <p className="flow-text">
+                        מאד פשוט! היכנסי לדף ההרשמה <span><a href="/signup">כאן </a></span>
+                        ותהיי מבין הראשונות ששומעות על מבצעים והגרלות! </p>
+                </Box>
+            </Box>
 
-                    <form action="" >
-                        <div className="input-field ">
-                            <i className="material-icons prefix" >email</i>
-                            <label htmlFor="email" className="">אימייל</label>
-                            <input type="email" id="email" />
-                        </div>
-
-                        <div className="input-field">
-                            <i className="material-icons prefix ">message</i>
-                            <label htmlFor="message">ההודעה שלך</label>
-                            <textarea name="message" dir="rtl" className="materialize-textarea"></textarea>
-                        </div>
-                    </form>
-                </div>
-
-
-
-                <div className="col s12 l5 offset-l2" dir="rtl">
-                    <h3 className="black-text text-darken-4" >צרי קשר</h3>
-                    <p className="flow-text" >
-                        אם יש לך שאלות אודות המוצרים באתר או בכל נושא אחר ניתן לפנות אליי דרך האימייל.
-                        רשמי את האימייל שלך ואת ההודעה/שאלה ואני מבטיחה לחזור אליך בהקדם.
-                    </p>
-
-                </div>
-
-            </div>
-        </section>
+        </div>
     )
 }
 
-export default SectionThree;
 
+export default SectionThree;
 

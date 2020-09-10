@@ -32,7 +32,7 @@ class SignUp extends Component {
 
         return (
             <div>
-                <div className="container containerStyle">
+                <div className="container containerStyle" dir="ltr">
                     <div className="row">
                         <SideImage img={image} />
                         <div className="col s12 m6 l6 z-depth-4  signInStyle">

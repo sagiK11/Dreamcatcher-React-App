@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Parallax } from "react-parallax";
 import Footer from "../home/Footer";
-import Img2 from "../../../img/img_11.jpg"
-import Img3 from "../../../img/img_12.jpg"
+import centerImg from "../../../img/img_11.jpg"
+import edgesImg from "../../../img/img_12.JPG"
+import Box from '@material-ui/core/Box';
+
 
 
 
@@ -10,9 +12,9 @@ class Shipping extends Component {
     render() {
         return (
             <div>
-                <Parallax bgImage={Img3} strength={450} style={upImgStyle} />
+                <Parallax bgImage={edgesImg} strength={600} style={upImgStyle} />
                 <MainSection />
-                <Parallax bgImage={Img3} strength={1200} style={bottomImgStyle} />
+                <Parallax bgImage={edgesImg} strength={600} style={bottomImgStyle} />
                 <Footer />
             </div>
         );
@@ -24,17 +26,19 @@ export default Shipping;
 
 const MainSection = () => {
     return (
-        <div className="container">
-            <div className="row">
-                <div className="col s12 m12 l6">
-                    <img src={Img2} alt="לוכדי חלומות - מארז" className="responsive-img" style={centerImgStyle} />
-                </div>
-                <div className="col s12 m12 l6" dir="rtl">
+        <div className="center">
+            <Box display="flex" flexWrap="wrap" p={1} m={1} bgcolor="background.paper" justifyContent="center">
+                <Box justifyContent="flex-start">
                     <Delivery />
                     <ReturnPolicy />
-                </div>
+                </Box>
+                <Box justifyContent="flex-start">
+                    <img src={centerImg} alt="לוכדי חלומות - מארז" className="responsive-img" style={centerImgStyle} />
+                </Box>
 
-            </div>
+            </Box>
+
+
 
         </div>
     );
@@ -92,12 +96,12 @@ const boldStyle = {
 const upImgStyle = {
     borderBottomRightRadius: "50%",
     borderBottomLeftRadius: "50%",
-    height: "400px",
+    height: "33em",
 }
 const bottomImgStyle = {
     borderTopRightRadius: "50%",
     borderTopLeftRadius: "50%",
-    height: "400px",
+    height: "30em",
 }
 const centerImgStyle = {
     borderRadius: "50%",

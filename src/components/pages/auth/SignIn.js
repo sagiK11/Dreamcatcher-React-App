@@ -29,7 +29,7 @@ class SignIn extends Component {
         const { auth, authError } = this.props;
         if (auth.uid) return <Redirect to="/" />
         return (
-            <div>
+            <div dir="ltr">
                 <div className="container containerStyle">
                     <div className="row">
                         <SideImage img={image1} />
