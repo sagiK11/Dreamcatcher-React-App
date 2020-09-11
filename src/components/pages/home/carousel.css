@@ -1,0 +1,26 @@
+.rec-pagination{
+    color:black;
+
+}
+.rec-dot:before{
+    color:orange;
+    background-color: pink;
+
+}
+.rec-dot::after{
+    color:orange;
+    background-color: pink;
+    box-shadow: white;
+
+}
+.rec-dot:focus{
+    color:orange;
+    background-color: pink;
+
+}
+.rec-dot:valid{
+    color:red;
+    background-color: red;
+
+}
+

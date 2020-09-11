@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import Footer from '../home/Footer'
+import Footer from '../../layout/Footer'
 import { connect } from "react-redux";
 import Dreamcatcher from "../../dreamcatcher/Dreamcatcher"
 import { firestoreConnect } from "react-redux-firebase"
 import { compose } from "redux"
 import { Link } from "react-router-dom"
-import { Animate, AnimateGroup } from "react-simple-animate";
+import { Animate } from "react-simple-animate";
 import Box from '@material-ui/core/Box';
 
 
@@ -41,34 +41,24 @@ const MainSection = ({ dreamcatchers }) => {
                 </Animate>
                 <Filter />
             </div>
-            <div className="center">
-                <Box display="flex" flexWrap="wrap" p={1} m={1} bgcolor="background.paper" justifyContent="center">
-                    <Collection dreamcatchers={dreamcatchers} />
-                </Box>
-            </div>
+            <Collection dreamcatchers={dreamcatchers} />
         </div >
     );
 }
 const Collection = ({ dreamcatchers }) => {
-    var index = -1;
     return (
         <div className="container">
-            {dreamcatchers && dreamcatchers.map((item) => {
-                index++;
-                return (
-                    <Box flexWrap="wrap" m={1}>
-                        <AnimateGroup play key={item.id} >
-                            <Animate delay={0.5} start={{ transform: 'translate(0, 170px)' }}
-                                end={{ transform: 'translate(0, 0)' }} sequenceIndex={index} duration={1.5}>
-                                <Link to={"/dreamcatcher/" + item.id} >
-                                    <Dreamcatcher dreamcatcher={item} />
-                                </Link>
-                            </Animate>
-                        </AnimateGroup>
-                    </Box>
-                );
-            })}
-
+            <Box display="flex" flexWrap="wrap" p={1} m={1} bgcolor="background.paper" justifyContent="center">
+                {dreamcatchers && dreamcatchers.map((item) => {
+                    return (
+                        <Link to={"/dreamcatcher/" + item.id} key={item.id} >
+                            <Box >
+                                <Dreamcatcher dreamcatcher={item} />
+                            </Box>
+                        </Link>
+                    );
+                })}
+            </Box>
         </div>
     );
 }
@@ -78,7 +68,7 @@ const Filter = () => {
         <div className="container">
             <Box display="flex" flexWrap="wrap" p={1} m={1} bgcolor="background.paper" justifyContent="center">
                 <Box>
-                    <a class="collection-item active black-text" href='#!'>  <h6 style={{ paddingRight: "10px" }}>מפיות סרוגות</h6></a>
+                    <a class="black-text" href='#!'>  <h6 style={{ paddingRight: "10px" }}>מפיות סרוגות</h6></a>
                 </Box>
                 <Box>
                     <a class="collection-item active black-text" href='#!'> <h6 style={{ paddingRight: "10px" }}>מחזיק מפתחות לרכב</h6></a>

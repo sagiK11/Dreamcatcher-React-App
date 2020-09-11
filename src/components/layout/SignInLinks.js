@@ -11,17 +11,16 @@ const SignInLinks = (props) => {
 
     return (
         <ul className="right hide-on-med-and-down">
-            <li> <a href="/" onClick={props.signOut} className="black-text">התנתקות</a> </li>
+            <li> <a href="/" onClick={props.signOut} className="link">התנתקות</a> </li>
             <li> {addItemLink}</li>
-            <li> <NavLink to="/about" className="black-text">קצת עליי</NavLink> </li>
-            <li> <NavLink to="/shipping-policy" className="black-text">מדיניות משלוחים</NavLink> </li>
-            <li> <NavLink to="/personal-orders" className="black-text"> הזמנות אישיות</NavLink> </li>
-            <li> <NavLink to="/shop" className="black-text"> חנות </NavLink></li>
-            <li> <NavLink to="/" className="black-text"> בית </NavLink></li>
-            <li>
-                <div className="blue-text">
-                    שלום   {props.user.profile.firstName} {props.user.profile.lastName}
-                </div></li>
+            <li> <NavLink to="/about" className="link">קצת עליי</NavLink> </li>
+            <li> <NavLink to="/shipping-policy" className="link">מדיניות משלוחים</NavLink> </li>
+            <li> <NavLink to="/personal-orders" className="link"> הזמנות אישיות</NavLink> </li>
+            <li> <NavLink to="/shop" className="link"> חנות </NavLink></li>
+            <li> <NavLink to="/" className="link"> בית </NavLink></li>
+            <li className="user-name">
+                שלום   {props.user.profile.firstName} {props.user.profile.lastName}
+            </li>
         </ul>
     );
 };

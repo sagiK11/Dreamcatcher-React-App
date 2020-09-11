@@ -15,6 +15,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-dropdown": "^1.8.0",
+    "react-elastic-carousel": "^0.7.5",
     "react-gesture-responder": "^2.1.0",
     "react-image-enlarger": "^1.1.0",
     "react-parallax": "^3.0.3",
@@ -27,7 +28,8 @@
     "redux-firestore": "^0.13.0",
     "redux-thunk": "^2.3.0",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^1.2.1"
+    "semantic-ui-react": "^1.2.1",
+    "styled-components": "^5.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

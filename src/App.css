@@ -63,7 +63,6 @@ h3{
 .about-me-text{
   line-height: 2.7rem;
 }
-
 .dream-edges{
-  background-color: #ffe7d9;
+  background-image: radial-gradient(farthest-corner at 99% 55%,#ffe7d9,white,white);
 }

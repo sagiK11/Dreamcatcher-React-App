@@ -1,5 +1,5 @@
 import React from "react";
-import NavLogo from "./NavLogo";
+import Logo from "./Logo";
 import MobileNav from "./MobileNav";
 import SignInLinks from "./SignInLinks";
 import SignOutLinks from "./SignOutLinks";
@@ -10,14 +10,16 @@ const Navbar = (props) => {
   const navLinks = auth.uid ? <SignInLinks user={props} /> : <SignOutLinks />;
   return (
     <div>
-
       <div className="navbar-fixed">
         <nav className="nav-warpper dream-edges" id="navbar" style={{ position: "fixed", transition: "top 0.5s", top: "0", zIndex: "1" }} >
+
+
           <div className="container">
-            <NavLogo />
             {auth.isLoaded && navLinks}
             <MobileNav auth={auth} />
           </div>
+          <Logo />
+
         </nav>
       </div>
 

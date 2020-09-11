@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { signUp } from "../../../store/actions/authActions"
 import { connect } from "react-redux"
 import { Redirect } from "react-router-dom"
-import Footer from '../home/Footer'
+import Footer from '../../layout/Footer'
 import "./style.css"
 
 import image from "../../../img/img_7.JPG"

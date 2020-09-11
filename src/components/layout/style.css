@@ -8,3 +8,17 @@
     z-index: 990;
     will-change: opacity;
 }
+
+.user-name{
+    color:#CCADA4;
+}
+.link{
+    color:#776464;
+}
+
+.link:active{
+    color:black;
+}
+.link:hover{
+    color:#CCADA4;
+}

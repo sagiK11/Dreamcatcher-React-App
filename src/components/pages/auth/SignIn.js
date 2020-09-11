@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import { signIn } from "../../../store/actions/authActions"
 import image1 from "../../../img/img_7.JPG"
 
-import Footer from '../home/Footer'
+import Footer from '../../layout/Footer'
 import { Redirect } from 'react-router-dom'
 import "./style.css"
 

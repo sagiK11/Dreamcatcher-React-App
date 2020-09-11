@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Parallax } from "react-parallax";
-import Footer from "../home/Footer";
+import Footer from "../../layout/Footer";
 import centerImg from "../../../img/img_11.jpg"
 import edgesImg from "../../../img/img_12.JPG"
 import Box from '@material-ui/core/Box';
@@ -12,9 +12,9 @@ class Shipping extends Component {
     render() {
         return (
             <div>
-                <Parallax bgImage={edgesImg} strength={600} style={upImgStyle} />
+                <Parallax bgImage={edgesImg} strength={600} style={upImgStyle} imgAlt="מארז" />
                 <MainSection />
-                <Parallax bgImage={edgesImg} strength={600} style={bottomImgStyle} />
+                <Parallax bgImage={edgesImg} strength={600} style={bottomImgStyle} imgAlt="מארז" />
                 <Footer />
             </div>
         );
@@ -32,8 +32,8 @@ const MainSection = () => {
                     <Delivery />
                     <ReturnPolicy />
                 </Box>
-                <Box justifyContent="flex-start">
-                    <img src={centerImg} alt="לוכדי חלומות - מארז" className="responsive-img" style={centerImgStyle} />
+                <Box justifyContent="flex-start" className="hide-on-med-and-down">
+                    <img src={centerImg} alt="לוכדי חלומות - מארז" className="responsive-img circle" style={centerImgStyle} />
                 </Box>
 
             </Box>
@@ -94,17 +94,13 @@ const boldStyle = {
     fontWeight: "bold",
 }
 const upImgStyle = {
-    borderBottomRightRadius: "50%",
-    borderBottomLeftRadius: "50%",
     height: "33em",
 }
 const bottomImgStyle = {
-    borderTopRightRadius: "50%",
-    borderTopLeftRadius: "50%",
     height: "30em",
 }
 const centerImgStyle = {
-    borderRadius: "50%",
-    height: "700px",
-    width: "1000px"
+    margin: "2em 3em 0em 0em",
+    height: "30em",
+    width: "40em"
 }
