@@ -8,8 +8,6 @@ import SectionFive from "./SectionFive"
 import Footer from "../../layout/Footer"
 
 
-
-
 const Home = () => {
   return (
     <div>

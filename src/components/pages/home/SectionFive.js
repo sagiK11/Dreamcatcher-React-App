@@ -9,6 +9,8 @@ import Img8 from "../../../img/h_8.jpg"
 import Img9 from "../../../img/h_9.jpg"
 import Carousel from 'react-elastic-carousel'
 import style from "./carousel.css";
+import Box from "@material-ui/core/Box"
+
 
 
 function SectionFive() {
@@ -16,8 +18,24 @@ function SectionFive() {
         <div className="center">
             <h2>אצלכן בבית</h2>
             <div className="center" >
-                <Carousel className="test" enableAutoPlay="true" autoPlaySpeed={6000}
-                    itemsToShow={3} focusOnSelect={true} showArrows={false} style={style}>
+                <Carousel className="test" enableAutoPlay={true} autoPlaySpeed={3000}
+                    itemsToShow={3} focusOnSelect={true} showArrows={false} style={style}
+                    renderPagination={({ pages, activePage, onClick }) => {
+                        return (
+                            <Box flexDirection="row" display="flex">
+                                {pages.map(page => {
+                                    const isActivePage = activePage === page
+                                    return (
+                                        <Circle
+                                            key={page}
+                                            onClick={() => onClick(page)}
+                                            active={isActivePage}
+                                        />
+                                    )
+                                })}
+                            </Box>
+                        )
+                    }}>
                     {images.map((image) =>
                         <div key={image.id} style={{ width: "30em" }} >
                             <img src={image.img} alt="לוכד חלומות" className="responsive-img" />
@@ -26,6 +44,16 @@ function SectionFive() {
             </div >
         </div>
 
+    );
+}
+
+const Circle = (props) => {
+    return (
+        <div className="center">
+            <button className={props.active ? "dot" : "dot_active"}
+                onClick={props.onClick} >
+            </button>
+        </div>
     );
 }
 
@@ -59,47 +87,5 @@ const images = [
     },
 
 ]
-
-const imageGrid = () => {
-    return (
-        <div className="center">
-            <h2>אצלכן בבית</h2>
-
-            <div className="row">
-                <div className="col s12 m3 l3 ">
-                    <img src={Img7} alt="תמונה" className="responsive-img" />
-                </div>
-                <div className="col s12 m3 l3">
-                    <img src={Img2} alt="תמונה" className="responsive-img" />
-                </div>
-                <div className="col s12 m3 l3">
-                    <img src={Img3} alt="תמונה" className="responsive-img" />
-
-                </div>
-                <div className="col s12 m3 l3">
-                    <img src={Img4} alt="תמונה" className="responsive-img" />
-
-                </div>
-                <div className="col s12 m3 l3">
-                    <img src={Img5} alt="תמונה" className="responsive-img" />
-
-                </div>
-                <div className="col s12 m3 l3">
-                    <img src={Img6} alt="תמונה" className="responsive-img" />
-
-                </div>
-                <div className="col s12 m3 l3">
-                    <img src={Img9} alt="תמונה" className="responsive-img" />
-
-                </div>
-                <div className="col s12 m3 l3">
-                    <img src={Img8} alt="תמונה" className="responsive-img" />
-
-                </div>
-            </div>
-        </div>
-
-    );
-}
 
 export default SectionFive;

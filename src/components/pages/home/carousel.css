@@ -1,26 +1,67 @@
-.rec-pagination{
-    color:black;
+
+.dot{
+    border-radius: 50%;
+    padding: 0 1em 0 1em;
+    margin: 0 .3em 0 .3em;
+    background-color:  #CCADA4;
+    height:25px;
+    width: 5px;
+    cursor:pointer;
+    border:none;
+    scale: 0.6;
 
 }
-.rec-dot:before{
+.dot:active{
+    background-color: grey;
+    border:none;
+    scale: 0.5;
+
+
+}
+.dot:focus{
     color:orange;
-    background-color: pink;
+    background-color: #CCADA4;
+    box-shadow: none;
+    border:none;
+    scale: 0.6;
+
 
 }
-.rec-dot::after{
-    color:orange;
-    background-color: pink;
-    box-shadow: white;
+
+.dot_active{
+    border-radius: 50%;
+    padding: 0 1em 0 1em;
+    margin: 0 .3em 0 .3em;
+    background-color: grey;
+    height:25px;
+    width: 5px;
+    cursor:pointer;
+    border:none;
+    scale: 0.5;
 
 }
-.rec-dot:focus{
-    color:orange;
-    background-color: pink;
+.dot_active:focus{
+    border-radius: 50%;
+    padding: 0 1em 0 1em;
+    margin: 0 .3em 0 .3em;
+    background-color: grey;
+    height:25px;
+    width: 5px;
+    cursor:pointer;
+    border:none;
+    scale: 0.5;
+
 
 }
-.rec-dot:valid{
-    color:red;
-    background-color: red;
 
-}
+
+
+
+
+
+
+
+
+
+
 

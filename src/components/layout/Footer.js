@@ -22,14 +22,14 @@ function Footer() {
                         </div>
                     </Box>
                     <Box>
-                        <div dir="ltr" style={{ padding: "0  2em 0em 5em" }}>
+                        <div dir="ltr" className="center" style={{ padding: "0  2em 0em 2em" }}>
                             <p ><a href="mailto:hilash95@gmail.com" className="media">hilash95@gmail.com</a></p>
                             <p className="black-text">050-8829551</p>
                         </div>
 
                     </Box>
                     <Box >
-                        <div dir="ltr" style={{ padding: "0  2em 2em 0em", }}>
+                        <div dir="ltr" style={{ padding: "0  2em 2em 2em", }}>
                             <p ><a href="https://www.facebook.com/לוכדי-החלומות-של-הילה-355862111817525" className="media">facebook</a></p>
                             <p><a href="https://www.instagram.com/dreamcatcher_by_hila/" className="media" >instagram</a></p>
                         </div>

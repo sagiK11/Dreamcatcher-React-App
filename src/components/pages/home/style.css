@@ -1,18 +1,36 @@
 
 
-
-
 .section-1{
     background:url("../../../img/bg_1.JPG");
     background-size: cover;
     background-position-y: center;
     min-height: 1000px;
+    background-repeat:no-repeat;
   
   }
+
   .welcome-title{
-    font-size: 4.4rem;
+    font-size: 6.4rem;
     font-weight: bolder;
     color: #ffe7d9;
+  }
+
+  @media (max-width:1300px){
+    .section-1{
+      background-position-x: center;
+
+    }
+    .welcome-title{
+      font-size: 3.4rem;
+      font-weight: bolder;
+      color: #ffe7d9;
+    }
+    h1{
+      margin:0;
+      padding:0.3em;
+    }
+   
+  
   }
 
 

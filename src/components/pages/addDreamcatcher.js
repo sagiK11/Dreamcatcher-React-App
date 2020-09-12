@@ -18,8 +18,6 @@ class AddDreamcatcher extends Component {
         category: "",
         amount: "",
         discription: "",
-
-
     }
     handleChange = (event) => {
         if (event.target == null) {
