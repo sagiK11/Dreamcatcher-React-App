@@ -35,7 +35,7 @@ class SignUp extends Component {
                 <div className="container containerStyle" dir="ltr">
                     <div className="row">
                         <SideImage img={image} />
-                        <div className="col s12 m6 l6 z-depth-4  signInStyle">
+                        <div className="col s12 m12 l6 z-depth-4  signInStyle">
                             <div style={{ padding: "3rem 0 4rem 0" }}>
                                 <form className="white" onSubmit={this.handleSubmit} >
                                     <WelcomeTitle />
@@ -97,7 +97,7 @@ const WelcomeTitle = () => {
 
 const SideImage = (props) => {
     return (
-        <div className="col s12 m6 l6">
+        <div className="col s12 m6 l6 hide-on-med-and-down">
             <img src={props.img} alt="לוכד חלומות" className="responsive-img imgStyle" />
         </div>
     );

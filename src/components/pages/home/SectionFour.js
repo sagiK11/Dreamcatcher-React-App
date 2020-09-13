@@ -4,10 +4,7 @@ import { Parallax } from "react-parallax"
 
 function SectionFour() {
     return (
-        <Parallax bgImage={Img3} strength={1000}>
-            <div style={{ height: 500 }}>
-            </div>
-        </Parallax>
+        <Parallax bgImage={Img3} strength={800} style={{ height: 300 }} />
     );
 }
 

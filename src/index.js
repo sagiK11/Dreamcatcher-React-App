@@ -53,9 +53,7 @@ ReactDOM.render(
     <ReactReduxFirebaseProvider {...rrfProps}>
       <StylesProvider jss={jss}>
         <ThemeProvider theme={theme}>
-
           <App />
-
         </ThemeProvider>
       </StylesProvider>
     </ReactReduxFirebaseProvider>

@@ -18,7 +18,7 @@ function SectionFive() {
         <div className="center">
             <h2>אצלכן בבית</h2>
             <div className="center" >
-                <Carousel className="test" enableAutoPlay={true} autoPlaySpeed={3000}
+                <Carousel
                     itemsToShow={3} focusOnSelect={true} showArrows={false} style={style}
                     renderPagination={({ pages, activePage, onClick }) => {
                         return (

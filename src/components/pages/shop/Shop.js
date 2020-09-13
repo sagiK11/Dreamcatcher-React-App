@@ -7,18 +7,39 @@ import { compose } from "redux"
 import { Link } from "react-router-dom"
 import { Animate } from "react-simple-animate";
 import Box from '@material-ui/core/Box';
+import "./style.css"
+import Filter from "./Filter"
 
 
 class Shop extends Component {
+    state = {
+        category: "all",
+        diameter: "",
+    }
+
+    filterBy = (category, diameter) => {
+        this.setState({
+            category,
+            diameter,
+        });
+    }
+
+
     render() {
         const { dreamcatchers } = this.props;
+        let filteredList = this.state.category !== "all" ?
+            dreamcatchers && dreamcatchers.filter((item) => {
+                return item.diameter === this.state.diameter || item.category === this.state.category;
+            }) : dreamcatchers;
+
         return (
             <div>
-                <MainSection dreamcatchers={dreamcatchers} />
+                <MainSection dreamcatchers={filteredList} filter={this.filterBy} />
                 <Footer />
             </div>
         )
     }
+
 }
 const mapStateToProps = (state) => {
     return {
@@ -31,16 +52,15 @@ export default compose(
     firestoreConnect([{ collection: 'dreamcatchers' }])
 )(Shop)
 
-const MainSection = ({ dreamcatchers }) => {
-    console.log(dreamcatchers);
+const MainSection = ({ dreamcatchers, filter }) => {
     return (
         <div >
             <div className="center" style={{ marginTop: "7em" }}>
                 <Animate play delay={2} duration={2} start={{ opacity: 0 }} end={{ opacity: 1 }}>
                     <h2 style={titleStyle}>לוכדי החלומות של הילה קטלוג</h2>
                 </Animate>
-                <Filter />
             </div>
+            <Filter filter={filter} />
             <Collection dreamcatchers={dreamcatchers} />
         </div >
     );
@@ -48,7 +68,7 @@ const MainSection = ({ dreamcatchers }) => {
 const Collection = ({ dreamcatchers }) => {
     return (
         <div className="container">
-            <Box display="flex" flexWrap="wrap" p={1} m={1} bgcolor="background.paper" justifyContent="center">
+            <Box display="flex" flexWrap="wrap" justifyContent="flex-start">
                 {dreamcatchers && dreamcatchers.map((item) => {
                     return (
                         <Link to={"/dreamcatcher/" + item.id} key={item.id} >
@@ -63,49 +83,8 @@ const Collection = ({ dreamcatchers }) => {
     );
 }
 
-const Filter = () => {
-    return (
-        <div className="container">
-            <Box display="flex" flexWrap="wrap" p={1} m={1} bgcolor="background.paper" justifyContent="center">
-                <Box>
-                    <a class="black-text" href='#!'>  <h6 style={{ paddingRight: "10px" }}>מפיות סרוגות</h6></a>
-                </Box>
-                <Box>
-                    <a class="collection-item active black-text" href='#!'> <h6 style={{ paddingRight: "10px" }}>מחזיק מפתחות לרכב</h6></a>
-                </Box>
-                <Box>
-                    <a class="collection-item active black-text" href='#!'>  <h6 style={{ paddingRight: "10px" }}>עשרים ס"מ קוטר</h6></a>
-                </Box>
-                <Box>
-                    <a class="collection-item active black-text" href='#!'> <h6 style={{ paddingRight: "10px" }}>שלושים ס"מ קוטר</h6></a>
-                </Box>
-                <Box>
-                    <a class="collection-item active black-text" href='#!'> <h6 style={{ paddingRight: "10px" }}>ארבעים ס"מ קוטר</h6></a>
-                </Box>
-                <Box>
-                    <a class="collection-item active black-text" href='#!'> <h6 style={{ paddingRight: "10px" }}>חמישים ס"מ קוטר</h6></a>
-                </Box>
-                <Box>
-                    <a class="collection-item active black-text" href='#!'><h6 style={{ paddingRight: "10px" }}>שישים ס"מ קוטר</h6></a>
-                </Box>
-                <Box>
-                    <a class="collection-item active black-text" href='#!'> <h6 style={{ paddingRight: "10px" }}>שבעים ס"מ קוטר</h6></a>
-                </Box>
-                <Box>
-                    <a class="collection-item active black-text" href='#!'><h6 style={{ paddingRight: "10px" }}>סטים קסומים</h6></a>
-                </Box>
-                <Box>
-                    <a class="collection-item active black-text" href='#!'> <h6 style={{ paddingRight: "10px" }}>כל הקטלוג</h6></a>
-                </Box>
-            </Box>
-        </div >
-    );
-}
-
 const titleStyle = {
     fontWeight: "w700",
     letterSpacing: "3px",
     marginTop: "30px"
 }
-
-

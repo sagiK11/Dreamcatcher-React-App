@@ -4,11 +4,7 @@ import Img2 from "../../../img/img_2.JPG"
 
 function SectionTwo() {
     return (
-        <Parallax bgImage={Img2} strength={500}>
-            <div style={{ height: 500 }}>
-
-            </div>
-        </Parallax>
+        <Parallax bgImage={Img2} strength={1200} style={{ height: 300 }} />
     )
 }
 

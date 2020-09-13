@@ -29,12 +29,12 @@ class SignIn extends Component {
         const { auth, authError } = this.props;
         if (auth.uid) return <Redirect to="/" />
         return (
-            <div dir="ltr">
-                <div className="container containerStyle">
+            <div >
+                <div className="container containerStyle" dir="ltr">
                     <div className="row">
                         <SideImage img={image1} />
 
-                        <div className="col s12 m6 l6 z-depth-4 signInStyle" >
+                        <div className="col s12 m12 l6 z-depth-4 signInStyle" >
                             <div className="" style={{ padding: "5rem 0 6rem 0" }}>
                                 <WelcomeTitle />
                                 <form className="white center" onSubmit={this.handleSubmit}>
@@ -91,7 +91,7 @@ const WelcomeTitle = () => {
 
 const SideImage = (props) => {
     return (
-        <div className="col s12 m6 l6">
+        <div className="col s12 m6 l6 hide-on-med-and-down">
             <img src={props.img} alt="לוכד חלומות" className="responsive-img imgStyle" />
         </div>
     );

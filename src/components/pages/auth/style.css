@@ -18,6 +18,10 @@
     background-color: white;
     color: black
 }
+.auth-button:focus{
+    background-color: white;
+    color: black
+}
 
 
 .containerStyle {

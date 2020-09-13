@@ -1,0 +1,10 @@
+.a-filter{
+    text-decoration: underline;
+    color:black;
+}
+a:hover{
+    color:grey;
+}
+a:focus{
+    color:#CCADA4;
+}

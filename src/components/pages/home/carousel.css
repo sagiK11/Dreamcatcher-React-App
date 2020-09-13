@@ -9,14 +9,11 @@
     cursor:pointer;
     border:none;
     scale: 0.6;
-
 }
 .dot:active{
     background-color: grey;
     border:none;
     scale: 0.5;
-
-
 }
 .dot:focus{
     color:orange;
@@ -24,8 +21,6 @@
     box-shadow: none;
     border:none;
     scale: 0.6;
-
-
 }
 
 .dot_active{
@@ -38,7 +33,6 @@
     cursor:pointer;
     border:none;
     scale: 0.5;
-
 }
 .dot_active:focus{
     border-radius: 50%;
@@ -50,8 +44,6 @@
     cursor:pointer;
     border:none;
     scale: 0.5;
-
-
 }
 
 

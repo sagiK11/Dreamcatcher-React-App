@@ -1,11 +1,9 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
-import { addDreamcatcher } from "../../store/actions/dreamActions"
+import { addDreamcatcher } from "../../../store/actions/dreamActions"
 import { Redirect } from "react-router-dom"
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
-
-
 
 
 
@@ -17,7 +15,7 @@ class AddDreamcatcher extends Component {
         diameter: "",
         category: "",
         amount: "",
-        discription: "",
+        description: "",
     }
     handleChange = (event) => {
         if (event.target == null) {
@@ -32,17 +30,17 @@ class AddDreamcatcher extends Component {
             }
 
         } else {
+            const price = event.target.id === "price" ? " ש\"ח " : "";
             this.setState({
-                [event.target.id]: event.target.value
+                [event.target.id]: event.target.value + price
             })
         }
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.addDreamcatcher(this.state)
+        this.props.addDreamcatcher(this.state);
     }
-
 
 
     render() {
@@ -100,13 +98,15 @@ class AddDreamcatcher extends Component {
 
                     <label htmlFor="description" style={labelStyle}>תיאור</label>
                     <div className="input-field">
-                        <input id="description" onChange={this.handleChange}></input>
+                        <textarea id="description" style={{ minHeight: "200px" }} onChange={this.handleChange}></textarea>
                     </div>
 
-                    <div className="input-field">
-                        <button className="btn pink lighten-1">הוסף</button>
+                    <div className="input-field" id="submit-button">
+                        <button className="btn black lighten-1">הוסף</button>
                     </div>
+
                 </form>
+
             </div >
         );
     }
