@@ -50,16 +50,11 @@ class AddDreamcatcher extends Component {
         if (!auth.uid || auth.email !== adminEmail)
             return <Redirect to="/" />
 
-        const diameterOptions = [
-            '30', '40', '50', '60', '70'
-        ];
-        const diamDefOption = diameterOptions[0];
-
         const categoryOptions = [
             'מחזיק מפתחות', 'מפית', 'מארז', 'לוכד חלומות', 'סט'
         ]
         const catDefOption = categoryOptions[0];
-
+        const dreamcatcher = categoryOptions[3];
 
         return (
             <div className="container" >
@@ -79,17 +74,14 @@ class AddDreamcatcher extends Component {
                     <div className="input-field" style={inputStyle}>
                         <input id="price" onChange={this.handleChange}></input>
                     </div>
-
-                    <label htmlFor="diameter" style={labelStyle}>קוטר</label>
-                    <div className="input-field" style={inputStyle}>
-                        <Dropdown options={diameterOptions} onChange={this.handleChange}
-                            value={diamDefOption} placeholder="Select an option" />
-                    </div>
                     <label htmlFor="diameter" style={labelStyle}>קטגוריה</label>
                     <div className="input-field" style={inputStyle}>
                         <Dropdown options={categoryOptions} onChange={this.handleChange}
                             value={catDefOption} placeholder="Select an option" />
                     </div>
+
+                    {this.state.category === dreamcatcher ?
+                        <DiameterDropDown def={diamDefOption} func={this.handleChange} /> : null}
 
                     <label htmlFor="amount" style={labelStyle}>כמות במלאי</label>
                     <div className="input-field" style={inputStyle}>
@@ -126,7 +118,25 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
+
+const DiameterDropDown = (props) => {
+    return (
+        <div>
+            <label htmlFor="diameter" style={labelStyle}>קוטר</label>
+            <div className="input-field" style={inputStyle}>
+                <Dropdown options={diameterOptions} onChange={props.func}
+                    value={props.diamDefOption} placeholder="בחר קוטר" />
+            </div>
+        </div>);
+}
+
 export default connect(mapStateToProps, mapDispatchToProps)(AddDreamcatcher)
+
+
+const diameterOptions = [
+    '30', '40', '50', '60', '70'
+];
+const diamDefOption = diameterOptions[0];
 
 const labelStyle = {
     fontSize: "16px",

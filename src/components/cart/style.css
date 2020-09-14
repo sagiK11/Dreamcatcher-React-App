@@ -1,0 +1,45 @@
+.card-item{
+    display: flex;
+    padding: 0 2m 2m 0;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+
+}
+.cart-zone{
+    padding: 2em
+}
+
+.card-col{
+    padding-right: 2em;
+}
+.card-img{
+    max-width: 10em;
+    border-radius: 5%;
+}
+.items-box{
+    border: 2px solid blue;
+}
+
+.pay-button{
+    background-color: black;
+    color:white;
+    width:80%;
+    padding:0.6em 2em;
+    letter-spacing: 0.1em;
+    padding:0.6em 2em;
+    border-radius: 1em;
+    font-size:1.1em;
+    border:none;
+    cursor:pointer;
+    margin:1em;
+}
+.pay-button:hover, .pay-button:focus{
+    background-color: #CCADA4;
+    color:black;
+}
+.anchor{
+    text-decoration: none;
+    color:#776464;
+    cursor: pointer;
+    font-size: 1.2em;
+}

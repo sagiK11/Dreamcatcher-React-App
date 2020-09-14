@@ -22,7 +22,7 @@ function SectionFive() {
                     itemsToShow={3} focusOnSelect={true} showArrows={false} style={style}
                     renderPagination={({ pages, activePage, onClick }) => {
                         return (
-                            <Box flexDirection="row" display="flex">
+                            <Box flexDirection="row" display="flex" >
                                 {pages.map(page => {
                                     const isActivePage = activePage === page
                                     return (
@@ -37,12 +37,12 @@ function SectionFive() {
                         )
                     }}>
                     {images.map((image) =>
-                        <div key={image.id} style={{ width: "30em" }} >
+                        < div key={image.id} style={{ width: "30em" }} >
                             <img src={image.img} alt="לוכד חלומות" className="responsive-img" />
                         </div>)}
                 </Carousel>
             </div >
-        </div>
+        </div >
 
     );
 }
@@ -60,30 +60,47 @@ const Circle = (props) => {
 const images = [
     {
         img: Img9,
+        id: 1,
     },
     {
         img: Img8,
+        id: 2,
+
     },
     {
         img: Img7,
+        id: 3,
+
     },
     {
         img: Img6,
+        id: 4,
+
     },
     {
         img: Img8,
+        id: 5,
+
     },
     {
         img: Img5,
+        id: 6,
+
     },
     {
         img: Img4,
+        id: 7,
+
     },
     {
         img: Img3,
+        id: 8,
+
     },
     {
         img: Img2,
+        id: 9,
+
     },
 
 ]

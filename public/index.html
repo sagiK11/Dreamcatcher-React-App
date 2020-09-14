@@ -5,7 +5,6 @@
   <meta charset="utf-8" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
   <meta name="description"
     content="לוכדי החלומות של הילה מציע לוכדי חלומות בעבודת יד למכירה לעיצוב הבית. יש אפשרות לעצב בעצמך את הלוכד שמתאים לך או לרכוש ישירות מהקולקציה. בנוסף, ניתן לעצב באופן אישי" />
   <!--
@@ -13,13 +12,12 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-
-
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
-  <meta name="msapplication-TileColor" content="#da532c">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#00aba9">
   <meta name="theme-color" content="#ffffff">
 
 
@@ -39,9 +37,6 @@
 
 
 
-
-
-
   <title>לוכדי החלומות של הילה</title>
 </head>
 
@@ -53,17 +48,16 @@
   <script src="/__/firebase/7.19.1/firebase-analytics.js"></script>
   <!-- Initialize Firebase -->
   <script src="/__/firebase/init.js"></script>
-
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.js"
+    integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
   <script>
     $(document).ready(function () {
       $(".sidenav").sidenav({ edge: "right" });
       $(".tooltipped").tooltip();
-      $('.modal').modal();
     });
   </script>
+
 </body>
 
 </html>

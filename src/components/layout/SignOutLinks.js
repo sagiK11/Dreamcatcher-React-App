@@ -1,5 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Box from '@material-ui/core/Box';
+
 
 
 const SignOutLinks = () => {
@@ -12,7 +14,15 @@ const SignOutLinks = () => {
             <li> <NavLink to="/personal-orders" className="link"> הזמנות אישיות</NavLink> </li>
             <li> <NavLink to="/shop" className="link"> חנות </NavLink></li>
             <li> <NavLink to="/" className="link"> בית </NavLink></li>
+            <li> <NavLink to="/cart" className="nav-cart">
+                <Box display="flex">
+                    <span className="cart-length fa pink-text lighten-5 " style={{ marginTop: "1em" }}>0</span>
+                    <i className="material-icons black-text prefix">shopping_cart</i>
+                </Box>
+            </NavLink></li>
         </ul >
     );
 };
 export default SignOutLinks;
+
+

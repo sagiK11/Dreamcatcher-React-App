@@ -12,14 +12,11 @@ const Navbar = (props) => {
     <div>
       <div className="navbar-fixed">
         <nav className="nav-warpper dream-edges" id="navbar" style={{ position: "fixed", transition: "top 0.5s", top: "0", zIndex: "1" }} >
-
-
           <div className="container">
             {auth.isLoaded && navLinks}
             <MobileNav auth={auth} />
           </div>
           <Logo />
-
         </nav>
       </div>
 

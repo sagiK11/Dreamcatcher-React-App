@@ -10,6 +10,7 @@ import AddDreamcatcher from "./components/pages/console/AddDreamcatcher"
 import DreamcatcherDetails from "./components/dreamcatcher/dreamcatcherDetails"
 import SignIn from "./components/pages/auth/SignIn"
 import SignUp from "./components/pages/auth/SignUp"
+import Cart from "./components/cart/Cart"
 import "./App.css";
 
 
@@ -31,6 +32,7 @@ class App extends Component {
             <Route exact path="/signin" component={SignIn} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/signout" component={Home} />
+            <Route exact path="/cart" component={Cart} />
           </Switch>
         </div>
       </BrowserRouter>

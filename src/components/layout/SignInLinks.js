@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux"
 import { signOut } from "../../store/actions/authActions"
+import Box from '@material-ui/core/Box';
+
 
 
 const SignInLinks = (props) => {
@@ -21,7 +23,13 @@ const SignInLinks = (props) => {
             <li className="user-name">
                 שלום   {props.user.profile.firstName} {props.user.profile.lastName}
             </li>
-        </ul>
+            <li className="nav-cart black-text">
+                <Box display="flex">
+                    <span className="cart-length ">0</span>
+                    <i className="material-icons black-text prefix">shopping_cart</i>
+                </Box>
+            </li>
+        </ul >
     );
 };
 const mapDispatchToProps = (dispatch) => {

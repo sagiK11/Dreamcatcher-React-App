@@ -68,7 +68,7 @@ const MainSection = ({ dreamcatchers, filter }) => {
 const Collection = ({ dreamcatchers }) => {
     return (
         <div className="container">
-            <Box display="flex" flexWrap="wrap" justifyContent="flex-start">
+            <Box display="flex" flexWrap="wrap" justifyContent="center">
                 {dreamcatchers && dreamcatchers.map((item) => {
                     return (
                         <Link to={"/dreamcatcher/" + item.id} key={item.id} >
