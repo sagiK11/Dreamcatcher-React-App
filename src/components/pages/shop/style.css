@@ -2,9 +2,9 @@
     text-decoration: underline;
     color:black;
 }
-a:hover{
+.a-filter:hover{
     color:grey;
 }
-a:focus{
+.a-filter:focus{
     color:#CCADA4;
 }

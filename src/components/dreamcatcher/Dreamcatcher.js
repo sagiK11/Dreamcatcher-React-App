@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import CardMedia from '@material-ui/core/CardMedia';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
-
+import Grid from "@material-ui/core/Grid"
 const useStyles = makeStyles({
     root: {
         maxWidth: 385,
@@ -22,6 +22,7 @@ const Dreamcatcher = ({ dreamcatcher }) => {
     const classes = useStyles();
     return (
         <div style={{ padding: "0 1em 2em 1em" }}>
+
             <Card variant="outlined" >
                 <CardActionArea >
                     <CardMedia className={classes.media}
@@ -31,7 +32,7 @@ const Dreamcatcher = ({ dreamcatcher }) => {
                             {dreamcatcher.model}
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p" className="center">
-                            {dreamcatcher.price}
+                            {dreamcatcher.price} &#8362;
                         </Typography>
                     </CardContent>
                 </CardActionArea>
@@ -39,7 +40,7 @@ const Dreamcatcher = ({ dreamcatcher }) => {
                     <Box>
                         <IconButton style={addToCartSyle} >
                             <ShoppingBasketIcon style={{ color: "black", marginLeft: "0.5em" }} />
-                            <span>הוספה לסל</span>
+                            <span>הוספה לסל </span>
                         </IconButton>
                     </Box>
                     <Box>
@@ -53,6 +54,7 @@ const Dreamcatcher = ({ dreamcatcher }) => {
     );
 
 }
+
 const addToCartSyle = {
     color: "black",
     borderRadius: "0em"
@@ -62,5 +64,11 @@ const moreInfoStyle = {
     color: "black",
     borderRadius: "0em",
 }
+const border = {
+    border: "2px solid red"
+}
 export default Dreamcatcher;
 
+
+
+// </div>

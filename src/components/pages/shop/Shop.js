@@ -9,6 +9,7 @@ import { Animate } from "react-simple-animate";
 import Box from '@material-ui/core/Box';
 import "./style.css"
 import Filter from "./Filter"
+import { Divider } from '@material-ui/core';
 
 
 class Shop extends Component {
@@ -61,6 +62,7 @@ const MainSection = ({ dreamcatchers, filter }) => {
                 </Animate>
             </div>
             <Filter filter={filter} />
+            <Divider />
             <Collection dreamcatchers={dreamcatchers} />
         </div >
     );

@@ -49,3 +49,8 @@ export const addToCart = (props, amount) => {
 
     }
 }
+
+export const removeFromCart = (item) => {
+    return (dispatch) => dispatch({ type: 'REMOVE_FROM_CART', item });
+
+}

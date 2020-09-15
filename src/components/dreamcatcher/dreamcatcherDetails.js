@@ -4,16 +4,12 @@ import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import Image from "react-image-enlarger";
 import { addToCart } from "../../store/actions/dreamActions"
-{/* <div className="col s12 m6 l6" >
-<div className="center">
-    <Image zoomed={isZoomed} src={dreamcatcher.img} alt="לוכד חלומות"
-        onClick={() => setZommed(true)} onRequestClose={() => setZommed(false)} />
-</div>
-</div> */}
 
 class DreamcatcherDetails extends Component {
     state = {
         amount: 1,
+        isZoomed: false,
+
     }
     handleChange = (event) => {
         this.setState({
@@ -23,6 +19,11 @@ class DreamcatcherDetails extends Component {
     handleAddToCart = (event) => {
         this.props.addToCart(this.props, this.state.amount);
     }
+    setZommed = (isZoomed) => {
+        this.setState({
+            isZoomed,
+        })
+    }
     render() {
         const { dreamcatcher } = this.props;
         if (dreamcatcher) {
@@ -30,7 +31,8 @@ class DreamcatcherDetails extends Component {
                 <div className="container" dir="ltr">
                     <div className="row">
                         <div className="col s12 m6 l6" >
-                            <img src={dreamcatcher.img} alt="לוכד חלומות" className="responsive-img" />
+                            <Image zoomed={this.state.isZoomed} src={dreamcatcher.img} alt="לוכד חלומות"
+                                onClick={() => this.setZommed(true)} onRequestClose={() => this.setZommed(false)} />
                         </div>
 
                         <div className="col s12 m6 l5  " dir="rtl" >
@@ -56,7 +58,7 @@ class DreamcatcherDetails extends Component {
                                 </div>
                             </div>
 
-                            <h6 className="center">{dreamcatcher.price}</h6>
+                            <h6 className="center">{dreamcatcher.price} &#8362;</h6>
                             <div className="center">
                                 <div className="row">
                                     <div className="col s12 m6 l4 offset-l6">
