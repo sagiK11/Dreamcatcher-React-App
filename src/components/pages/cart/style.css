@@ -56,10 +56,6 @@
 .remove-item:hover{
     color:red
 }
-.cart-icon{
-    padding: 0em 0em 1em 1em;
-    font-size: 3em;
-}
 .my-basket-title{
     /* border-bottom: 1px solid grey; */
 }

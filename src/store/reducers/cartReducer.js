@@ -1,6 +1,7 @@
 const initState = {
     items: [],
     cartPrice: 0,
+    itemsNumber: 0,
 }
 
 export const cartReducer = (state = initState, action) => {
@@ -27,6 +28,7 @@ export const cartReducer = (state = initState, action) => {
                     ...state,
                     items: [...newArray],
                     cartPrice: state.cartPrice + price,
+                    itemsNumber: state.itemsNumber + newItem.amount,
 
                 }
             }
@@ -35,6 +37,7 @@ export const cartReducer = (state = initState, action) => {
                 ...state,
                 items: [...state.items, newItem],
                 cartPrice: state.cartPrice + price,
+                itemsNumber: state.itemsNumber + newItem.amount,
             }
         }
         case 'REMOVE_FROM_CART': {

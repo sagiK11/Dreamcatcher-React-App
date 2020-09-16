@@ -4,6 +4,12 @@ import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import Image from "react-image-enlarger";
 import { addToCart } from "../../store/actions/dreamActions"
+import Icon from "@material-ui/core/Icon"
+import Grid from "@material-ui/core/Grid"
+import TextField from "@material-ui/core/TextField"
+import MenuItem from '@material-ui/core/MenuItem';
+import AddDialog from "./AddToCartDialog"
+
 
 class DreamcatcherDetails extends Component {
     state = {
@@ -16,7 +22,12 @@ class DreamcatcherDetails extends Component {
             amount: event.target.value
         })
     }
-    handleAddToCart = (event) => {
+    handleAmount = (event) => {
+        this.setState({
+            amount: event.target.value,
+        })
+    }
+    handleAddToCart = () => {
         this.props.addToCart(this.props, this.state.amount);
     }
     setZommed = (isZoomed) => {
@@ -28,62 +39,54 @@ class DreamcatcherDetails extends Component {
         const { dreamcatcher } = this.props;
         if (dreamcatcher) {
             return (
-                <div className="container" dir="ltr">
-                    <div className="row">
-                        <div className="col s12 m6 l6" >
-                            <Image zoomed={this.state.isZoomed} src={dreamcatcher.img} alt="לוכד חלומות"
-                                onClick={() => this.setZommed(true)} onRequestClose={() => this.setZommed(false)} />
-                        </div>
+                <div className="container">
+                    <Grid container direction="row-reverse" >
+                        <Grid container item xs={12} sm={12} md={4} lg={6} >
+                            <Image dirction="col" style={{ maxWidth: "28em" }}
+                                zoomed={this.state.isZoomed} src={dreamcatcher.img} alt="לוכד חלומות"
+                                onClick={() => this.setZommed(true)}
+                                className="img-details"
+                                onRequestClose={() => this.setZommed(false)} />
+                        </Grid>
+                        <Grid item xs={12} sm={12} md={8} lg={6} container dirction="col" className="details-col" >
+                            <Grid item xs={12} sm={12} md={12} lg={12} style={border}>
+                                <ModelTitle title={dreamcatcher.model} />
 
-                        <div className="col s12 m6 l5  " dir="rtl" >
+                            </Grid>
+                            <Grid item xs={12} sm={12} md={12} lg={12} style={border}>
+                                <ModelDescription description={dreamcatcher.description} />
 
-                            <h2 style={modelStyle}>{dreamcatcher.model} </h2>
+                            </Grid>
+                            <Grid item xs={12} sm={12} md={12} lg={12} style={border}>
+                                <ModelDiameter diameter={dreamcatcher.diameter} />
 
-                            <span><b>תיאור</b></span>
-                            <h6 style={paraStyle}>{dreamcatcher.description}</h6>
+                            </Grid>
+                            <Grid item xs={12} sm={12} md={12} lg={12} style={border}>
+                                <ModelInventory amount={dreamcatcher.amount} />
 
-                            <span><b>קוטר</b></span>
-                            <h6>{dreamcatcher.diameter}ס"מ</h6>
+                            </Grid>
+                            <Grid item xs={12} sm={12} md={12} lg={12} style={border}>
+                                <ModelHandMade />
 
-                            <div className="center">
-                                <div style={flexStyle}>
-                                    <h6>כמות במלאי  - <span>{dreamcatcher.amount}</span></h6>
-                                </div>
-                            </div>
+                            </Grid>
+                            <Grid item xs={12} sm={12} md={12} lg={12} style={border}>
+                                <ModelPrice price={dreamcatcher.price} />
 
-                            <div className="center">
-                                <div style={flexStyle}>
-                                    <i className="material-icons" style={{ color: "black", fontSize: "2rem", paddingTop: "1rem" }}>check</i>
-                                    <p style={{ fontSize: "18px", color: "black", paddingTop: "0", paddingRight: "5px" }}>עבודת יד</p>
-                                </div>
-                            </div>
+                            </Grid>
+                            <Grid item xs={12} sm={12} md={12} lg={12} style={border}>
+                                <AmountSelection amount={dreamcatcher.amount} func={this.handleAmount} />
+                            </Grid>
+                            <Grid item xs={12} sm={12} md={12} lg={12} style={border}>
+                                <AddToCartButton amount={this.state.amount} dreamcatcher={dreamcatcher} func={this.handleAddToCart} />
+                            </Grid>
+                        </Grid>
 
-                            <h6 className="center">{dreamcatcher.price} &#8362;</h6>
-                            <div className="center">
-                                <div className="row">
-                                    <div className="col s12 m6 l4 offset-l6">
-
-                                    </div>
-                                    <div className="col s12 m6 l2">
-                                        <label htmlFor="">כמות</label>
-                                        <input type="text" defaultValue={1} className="" id="amount" onChange={this.handleChange} />
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div className="center">
-                                <button className="waves-effect waves-light btn"
-                                    style={buttonStyle} onClick={this.handleAddToCart}>
-                                    <span>הוסיפי לסל</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div >
+                    </Grid>
+                </div>
             );
         } else {
             return (
-                <div className="container" dir="rtl">
+                <div className="container">
                     <div className="center">
                         <p>טוען פריט..</p>
                     </div>
@@ -92,6 +95,94 @@ class DreamcatcherDetails extends Component {
         }
     }
 
+}
+
+const ModelTitle = (props) => {
+    return (
+        <h3>{props.title}</h3>
+    );
+}
+const ModelDescription = (props) => {
+    return (
+        <div>
+            <span><b>תיאור</b></span>
+            <h6 style={paraStyle}>{props.description}</h6>
+        </div>
+    );
+}
+
+const ModelDiameter = (props) => {
+    return (
+        <div>
+            <span><b>קוטר</b></span>
+            <h6>{props.diameter} ס"מ</h6>
+        </div>
+    );
+}
+
+const ModelInventory = (props) => {
+    return (
+        <h6>כמות במלאי  - <span>{props.amount}</span></h6>
+    );
+}
+
+const ModelHandMade = () => {
+    return (
+        <div className="center">
+            <Icon>check</Icon>
+            <span>עבודת יד</span>
+        </div>);
+}
+
+const ModelPrice = (props) => {
+    return (
+        <h6 className="center">{props.price} &#8362;</h6>
+    );
+}
+
+const AmountSelection = (props) => {
+    const amount = props.amount;
+    const options = Array.from({ length: amount }, (_, i) => i + 1);
+    return (
+        <div className="center" style={border}>
+            <TextField
+                id="standard-select-currency"
+                select
+                label="כמות"
+                defaultValue={1}
+                onChange={props.func}
+            >
+                {options.map((option) => (
+                    <MenuItem key={option} value={option}>
+                        {option}
+                    </MenuItem>
+                ))}
+            </TextField>
+        </div>
+    );
+}
+
+const AddToCartButton = (props) => {
+    const [open, setOpen] = React.useState(false);
+    const [selectedValue, setSelectedValue] = React.useState("עבור לסל שלי");
+
+    const handleClickOpen = () => {
+        setOpen(true);
+        props.func();
+    };
+
+    const handleClose = (value) => {
+        setOpen(false);
+        setSelectedValue(value);
+    };
+    return (
+        <div className="center">
+            <button className="details-button"
+                onClick={handleClickOpen} >
+                <span>הוסיפי לסל</span>
+            </button>
+            <AddDialog amount={props.amount} dreamcatcher={props.dreamcatcher} selectedValue={selectedValue} open={open} onClose={handleClose} />
+        </div>);
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -118,25 +209,12 @@ export default compose(
 )(DreamcatcherDetails)
 
 
-const buttonStyle = {
-    backgroundColor: "black",
-    color: "white",
-    fontSize: "1.5rem",
-    letterSpacing: "2px",
-    minHeight: "50px",
-    display: "block",
-    width: "100%",
+const border = {
+    // border: "1px solid red"
 }
 
 const paraStyle = {
     lineHeight: "1.8rem",
 }
 
-const flexStyle = {
-    display: "inline-flex",
-}
 
-const modelStyle = {
-    marginTop: "0.3em",
-    marginBottom: "0.3em",
-}

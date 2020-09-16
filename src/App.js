@@ -10,7 +10,7 @@ import AddDreamcatcher from "./components/pages/console/AddDreamcatcher"
 import DreamcatcherDetails from "./components/dreamcatcher/dreamcatcherDetails"
 import SignIn from "./components/pages/auth/SignIn"
 import SignUp from "./components/pages/auth/SignUp"
-import Cart from "./components/cart/Cart"
+import Cart from "./components/pages/cart/Cart"
 import "./App.css";
 
 

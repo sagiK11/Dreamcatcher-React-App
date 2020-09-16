@@ -4,8 +4,9 @@ import "./style.css"
 import Grid from '@material-ui/core/Grid';
 import { Divider } from "@material-ui/core";
 import Dropdown from 'react-dropdown';
-import Footer from "../layout/Footer"
-import { removeFromCart } from "../../store/actions/dreamActions"
+import Footer from "../../layout/Footer"
+import { removeFromCart } from "../../../store/actions/dreamActions"
+import CartItem from "./CartItem"
 
 
 
@@ -21,20 +22,7 @@ class Cart extends Component {
         })
     }
 
-    componentDidMount() {
-        const { items } = this.props.items;
-        var cartPrice = 0;
 
-        items.map((item) => {
-
-            cartPrice += this.calItemsPrice(item);
-        })
-        this.setState({
-            items,
-            cartPrice,
-        })
-
-    }
     calItemsPrice(item) {
         const price = parseInt(item.price.slice(0, 3));
         const amount = item.amount;
@@ -79,7 +67,7 @@ const CartItems = (props) => {
             <Grid className="items-box">
                 {items && items.map((item, i) => {
                     const totalPrice = props.func(item);
-                    return <CartItem item={item} price={totalPrice} func={props.remove} key={i} />
+                    return <CartItem item={item} price={totalPrice} remove={props.remove} key={i} />
                 })}
             </Grid>
         </Grid>
@@ -91,10 +79,7 @@ const CartItems = (props) => {
 const Title = () => {
     return (
         <Grid container style={border} className="my-basket-title">
-            <Grid item xs={2} sm={2} md={2} lg={1} style={border} >
-                <i className="material-icons cart-icon">shopping_basket</i>
-            </Grid>
-            <Grid item xs={10} sm={10} md={10} lg={11} style={border}>
+            <Grid item xs={12} sm={12} md={12} lg={12} style={border}>
                 <h3 >סל הקניות שלי</h3>
             </Grid>
         </Grid>
@@ -105,10 +90,10 @@ const Coupon = () => {
     return (
         <Grid >
             <Grid item lg={12} style={border}>
-                <a className="anchor">הזן קוד קופון</a>
+                <a href="!#" className="anchor">הזן קוד קופון</a>
             </Grid>
             <Grid item lg={12} style={border}>
-                <a className="anchor">הוסף הערה</a>
+                <a href="!#" className="anchor">הוסף הערה</a>
             </Grid>
         </Grid>
     );
@@ -137,7 +122,7 @@ const OrderSummary = (props) => {
                 </Grid>
             </Grid>
 
-            <Grid container spacing={1} container style={{ padding: "0 1em 0 1em" }}
+            <Grid container spacing={1} style={{ padding: "0 1em 0 1em" }}
                 direction="row"
                 justify="space-around"
                 alignItems="stretch"  >
@@ -154,7 +139,7 @@ const OrderSummary = (props) => {
 
             </Grid>
             <Divider />
-            <Grid container spacing={1} container style={{ padding: "0 1em 0 1em" }}
+            <Grid container spacing={1} style={{ padding: "0 1em 0 1em" }}
                 direction="row"
                 justify="space-around"
                 alignItems="stretch">
@@ -184,7 +169,6 @@ const OrderSummary = (props) => {
 
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
         items: state.cart,
     }
@@ -197,25 +181,7 @@ const mapDispatchToProps = (dispatch) => {
     }
 
 }
-const CartItem = (props) => {
-    const { item } = props;
-    return (
-        <Grid container className="card-item" direction="row">
-            <Grid item xs={7} sm={5} md={5} lg={4} style={border}>
-                <img src={item.img} className="card-img" alt="לוכד חלומות" />
-            </Grid>
-            <Grid item xs={4} sm={6} md={6} lg={7} className="card-col" style={border}>
-                <h6>{item.model}</h6>
-                <h6>{item.amount}</h6>
-                <h6> {props.price} &#8362;</h6>
-            </Grid>
-            <Grid item xs={1} sm={1} md={1} lg={1} style={border} >
-                <a onClick={() => props.func(item)}><i className="material-icons remove-item">clear</i></a>
-            </Grid>
 
-        </Grid>
-    );
-}
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);
 
 const border = {

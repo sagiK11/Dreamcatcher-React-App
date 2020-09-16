@@ -2,11 +2,12 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux"
 import { signOut } from "../../store/actions/authActions"
-import Box from '@material-ui/core/Box';
+import CartIcon from "./CartIcon"
 
 
 
 const SignInLinks = (props) => {
+    const itemsNumber = props.cart.itemsNumber;
     const adminEmail = "sagi@gmail.com"
     const admin = props.user.auth.email === adminEmail;
     const addItemLink = admin ? <NavLink to="/add-item" className="black-text">הוספת פריט</NavLink> : null;
@@ -23,12 +24,7 @@ const SignInLinks = (props) => {
             <li className="user-name">
                 שלום   {props.user.profile.firstName} {props.user.profile.lastName}
             </li>
-            <li className="nav-cart black-text">
-                <Box display="flex">
-                    <span className="cart-length ">0</span>
-                    <i className="material-icons black-text prefix">shopping_cart</i>
-                </Box>
-            </li>
+            <li> <CartIcon itemsNumber={itemsNumber} /></li>
         </ul >
     );
 };
@@ -38,4 +34,10 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(SignInLinks);
+const mapStateToProps = (state) => {
+    return {
+        cart: state.cart
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignInLinks);

@@ -1,10 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Box from '@material-ui/core/Box';
+import { connect } from "react-redux"
+import CartIcon from "./CartIcon"
 
 
 
-const SignOutLinks = () => {
+const SignOutLinks = (props) => {
+    const itemsNumber = props.cart.itemsNumber;
     return (
         <ul className="right hide-on-med-and-down">
             <li> <NavLink to="/signin" className="link">התחברות</NavLink> </li>
@@ -14,15 +16,15 @@ const SignOutLinks = () => {
             <li> <NavLink to="/personal-orders" className="link"> הזמנות אישיות</NavLink> </li>
             <li> <NavLink to="/shop" className="link"> חנות </NavLink></li>
             <li> <NavLink to="/" className="link"> בית </NavLink></li>
-            <li> <NavLink to="/cart" className="nav-cart">
-                <Box display="flex">
-                    <span className="cart-length fa pink-text lighten-5 " style={{ marginTop: "1em" }}>0</span>
-                    <i className="material-icons black-text prefix">shopping_cart</i>
-                </Box>
-            </NavLink></li>
+            <li> <CartIcon itemsNumber={itemsNumber} /></li>
         </ul >
     );
 };
-export default SignOutLinks;
+const mapStateToProps = (state) => {
+    return {
+        cart: state.cart,
+    }
+}
+export default connect(mapStateToProps)(SignOutLinks);
 
 

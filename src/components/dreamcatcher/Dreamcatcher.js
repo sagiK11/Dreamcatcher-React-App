@@ -3,31 +3,22 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
-import IconButton from '@material-ui/core/IconButton';
+import Icon from '@material-ui/core/Icon';
 import CardMedia from '@material-ui/core/CardMedia';
-import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
-import Grid from "@material-ui/core/Grid"
-const useStyles = makeStyles({
-    root: {
-        maxWidth: 385,
-    },
-    media: {
-        height: 400,
-    },
-});
+import "./style.css"
 
-const Dreamcatcher = ({ dreamcatcher }) => {
-    const classes = useStyles();
+const Dreamcatcher = (props) => {
+    const { dreamcatcher } = props;
+
     return (
-        <div style={{ padding: "0 1em 2em 1em" }}>
+        <div style={{ padding: "0 1em 2em 1em", }}>
 
-            <Card variant="outlined" >
+            <Card variant="outlined">
                 <CardActionArea >
-                    <CardMedia className={classes.media}
+                    <CardMedia style={{ height: "400px", maxWidth: "385px" }}
                         image={dreamcatcher.img} />
-                    <CardContent>
+                    <CardContent  >
                         <Typography gutterBottom variant="h5" component="h2" className="center">
                             {dreamcatcher.model}
                         </Typography>
@@ -36,39 +27,18 @@ const Dreamcatcher = ({ dreamcatcher }) => {
                         </Typography>
                     </CardContent>
                 </CardActionArea>
-                <Box display="flex" flexWrap="wrap" p={1} m={1} bgcolor="background.paper" justifyContent="center">
-                    <Box>
-                        <IconButton style={addToCartSyle} >
-                            <ShoppingBasketIcon style={{ color: "black", marginLeft: "0.5em" }} />
-                            <span>הוספה לסל </span>
-                        </IconButton>
+                <Box className="buttons" display="flex" flexWrap="wrap" bgcolor="background.paper" justifyContent="center">
+                    <Box >
+                        <div className="card-button">
+                            <span><Icon className="icon">shopping_basket_icon</Icon></span>
+                            <span className="button-text">הוספה לסל </span>
+                        </div>
                     </Box>
-                    <Box>
-                        <IconButton style={moreInfoStyle} >
-                            <span>מידע נוסף</span>
-                        </IconButton>
-                    </Box>
+
                 </Box>
             </Card>
-        </div>
+        </div >
     );
 
 }
-
-const addToCartSyle = {
-    color: "black",
-    borderRadius: "0em"
-}
-
-const moreInfoStyle = {
-    color: "black",
-    borderRadius: "0em",
-}
-const border = {
-    border: "2px solid red"
-}
 export default Dreamcatcher;
-
-
-
-// </div>

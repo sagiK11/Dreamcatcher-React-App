@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Img1 from "../../../img/img_1.JPG"
-
+import "./style.css"
 
 class MainSection extends Component {
 
