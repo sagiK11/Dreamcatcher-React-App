@@ -1,12 +1,13 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
-import "./style.css"
 import Grid from '@material-ui/core/Grid';
 import { Divider } from "@material-ui/core";
 import Dropdown from 'react-dropdown';
 import Footer from "../../layout/Footer"
 import { removeFromCart } from "../../../store/actions/dreamActions"
 import CartItem from "./CartItem"
+import "./style.css"
+
 
 
 
@@ -14,6 +15,9 @@ class Cart extends Component {
 
     state = {
         deliveryPrice: 40,
+    }
+    componentDidMount() {
+        window.scrollTo(0, 0);
     }
 
     handleDelivery = (event) => {
@@ -31,11 +35,15 @@ class Cart extends Component {
 
     }
     removeItem = (itemToRemove) => {
+        console.log(this.props)
         this.props.removeFromCart(itemToRemove);
     }
 
     render() {
         const { items } = this.props.items;
+        const isBagEmpty = items.length === 0;
+        const mainSection = !isBagEmpty ?
+            <CartItems items={items} func={this.calItemsPrice} remove={this.removeItem} /> : <EmptyBag />;
         return (
             <div>
                 <div className="container cart-zone" style={border}>
@@ -43,8 +51,8 @@ class Cart extends Component {
                         <Grid container spacing={1} wrap="wrap" align-content="flex-start">
                             <Grid item xs={12} sm={8} md={8} lg={8} style={border} >
                                 <Title />
-                                <CartItems items={items} func={this.calItemsPrice} remove={this.removeItem} />
-                                <Coupon />
+                                {mainSection}
+
                             </Grid>
                             <Grid item xs={12} sm={8} md={4} lg={4} style={border}>
                                 <OrderSummary cart={this.props.items} func={this.handleDelivery} deliveryPrice={this.state.deliveryPrice} />
@@ -70,6 +78,7 @@ const CartItems = (props) => {
                     return <CartItem item={item} price={totalPrice} remove={props.remove} key={i} />
                 })}
             </Grid>
+            <Coupon />
         </Grid>
 
     );
@@ -102,7 +111,7 @@ const Coupon = () => {
 
 const OrderSummary = (props) => {
     const deliveryOptions = [
-        'משלוח עד לבית', 'איסוף מבית העסק'
+        'משלוח עד לבית', 'איסוף מבית העסק בהוד"ש'
     ]
 
     return (
@@ -136,7 +145,6 @@ const OrderSummary = (props) => {
                     <Dropdown options={deliveryOptions} onChange={props.func}
                         placeholder="משלוח עד לבית" />
                 </Grid>
-
             </Grid>
             <Divider />
             <Grid container spacing={1} style={{ padding: "0 1em 0 1em" }}
@@ -167,6 +175,13 @@ const OrderSummary = (props) => {
     );
 }
 
+const EmptyBag = () => {
+    return (
+        <div>
+            <h5>אין פריטים בסל</h5>
+        </div>
+    );
+}
 
 const mapStateToProps = (state) => {
     return {

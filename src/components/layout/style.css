@@ -10,7 +10,8 @@
 }
 
 .user-name{
-    color:#CCADA4;
+    color:black;
+    text-shadow: 1px 1px 1px grey;
 }
 .link{
     color:#776464;
@@ -21,5 +22,14 @@
 }
 .link:hover{
     color:#CCADA4;
+}
+
+.logo{
+    padding: 0.1em 2em 0em 1em;
+}
+@media screen and (max-width:670px){
+    .logo{
+        margin:0em 0em 0em 1em;
+    }
 }
 

@@ -1,0 +1,36 @@
+.tabs:focus{
+    background-color: red;
+}
+.tabs:active{
+    background-color: red;
+}
+
+.tab:focus{
+    background-color: #ccada4 !important;
+    color:black
+  }
+  
+.c-label{
+    font-size: 1.2rem;
+  
+}
+.c-button{
+    padding: 0.5em 1em 0.5em 1em;
+    background-color: black;
+    color:white;
+    border:none;
+    border-radius: 1em;
+}
+.c-button:hover{
+    background-color: white;
+    color:black;
+    border:2px solid black;
+}
+.coupon-page{
+    padding: 2em 5em 2em 5em;
+}
+
+.input-fd{
+    max-width: 13em;
+    max-height: 3em;
+}

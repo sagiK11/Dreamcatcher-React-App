@@ -15,7 +15,6 @@
     width: 100%;
     min-width: 20em;   
     text-align: center;
-
 }
 .card-button:hover{
     background-color: black;
@@ -38,6 +37,9 @@
     top: 0.15em;
     left:0.3em;
 }
+.details-price{
+    margin: 0.5em 0 1em 0;
+}
 .details-button{
     background-color: black;
     color: white;
@@ -46,6 +48,9 @@
     min-height: 1em;
     display: block;
     width: 100%;
+    border-radius: 2em;
+    border:2px solid black;
+    margin-top: 1em;
 }
 .details-button:hover{
     background-color: white;
@@ -66,14 +71,21 @@
 .details-col{
     padding:3em
 }
+
 .MuiDialog-paper{
     min-width: 25em;
     min-height: 25em;
-    border-radius: 22em;
-
+}
+@media screen and (max-width:370px){
+    .MuiDialog-paper{
+        min-width: calc(100% - 30px);
+        min-height: calc(100%- 50px);
+    }
 }
 
-
+.dialog-img{
+    margin: 1em;
+}
 .cart-link-button{
     background-color: #776464;
     border-radius: 1em;
@@ -81,8 +93,8 @@
 .cart-link-text{
     color:white;
     padding: 0 .2em 0em 0.2em;
-    font-size: 1.4em;
-
+    font-size: 2.6em;
+    text-shadow: 1px 1px 1px  black;
 }
 .shop-link-button{
     background-color: white;
@@ -92,15 +104,16 @@
 .shop-link-text{
     color:#776464;
     font-size: 1.1em;
-
+    text-shadow: 1px  black  ;
 }
 .MuiTypography-h4{
     background-color: #776464;
     color:white;
     max-height: 6em;
     padding: .5em .2em .5em 0em;
-
+    margin-bottom: 1em;
 }
+
 .buttons-layout{
     margin: 1em 0 1em 0;
     padding: 0 .5em 0 .5em;

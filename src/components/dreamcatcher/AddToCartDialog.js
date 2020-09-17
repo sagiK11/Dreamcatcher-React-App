@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid"
 import Typography from '@material-ui/core/Typography';
 
 
-const options = ['עבור לסל שלי', 'עבור לחנות']
+const options = ['עבור לסל שלי', 'חזור לקטלוג']
 
 export default function AddDialog(props) {
     const { onClose, selectedValue, open } = props;
@@ -20,8 +20,8 @@ export default function AddDialog(props) {
         onClose(value);
     }
     return (
-        <Dialog onClose={handleClose} open={open}>
-            <Typography variant="h4">הפריט נוסף לסל!</Typography>
+        <Dialog onClose={handleClose} open={open} fullWidth>
+            <Typography variant="h4" className="title">הפריט נוסף לסל!</Typography>
             <DialogItem dreamcatcher={props.dreamcatcher} amount={props.amount} />
             <Grid container className="buttons-layout" >
                 <BottomButton page="/cart" option={options[0]}
@@ -38,7 +38,7 @@ const DialogItem = ({ dreamcatcher, amount }) => {
     const totalPrice = price * amount;
 
     return (
-        <div style={{ marginRight: "1em" }}>
+        <div className="dialog-img">
             <Grid container className="card-item" direction="row" >
                 <Grid item xs={12} sm={6} md={6} lg={6}  >
                     <img src={dreamcatcher.img} className="card-img" alt="לוכד חלומות" />

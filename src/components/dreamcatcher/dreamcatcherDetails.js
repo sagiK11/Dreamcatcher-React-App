@@ -40,43 +40,43 @@ class DreamcatcherDetails extends Component {
         if (dreamcatcher) {
             return (
                 <div className="container">
-                    <Grid container direction="row-reverse" >
+                    <Grid container direction="row-reverse">
                         <Grid container item xs={12} sm={12} md={4} lg={6} >
-                            <Image dirction="col" style={{ maxWidth: "28em" }}
+                            <Image dirction="col"
                                 zoomed={this.state.isZoomed} src={dreamcatcher.img} alt="לוכד חלומות"
                                 onClick={() => this.setZommed(true)}
                                 className="img-details"
                                 onRequestClose={() => this.setZommed(false)} />
                         </Grid>
                         <Grid item xs={12} sm={12} md={8} lg={6} container dirction="col" className="details-col" >
-                            <Grid item xs={12} sm={12} md={12} lg={12} style={border}>
+                            <Grid item xs={12} sm={12} md={12} lg={12}>
                                 <ModelTitle title={dreamcatcher.model} />
 
                             </Grid>
-                            <Grid item xs={12} sm={12} md={12} lg={12} style={border}>
+                            <Grid item xs={12} sm={12} md={12} lg={12}>
                                 <ModelDescription description={dreamcatcher.description} />
 
                             </Grid>
-                            <Grid item xs={12} sm={12} md={12} lg={12} style={border}>
+                            <Grid item xs={12} sm={12} md={12} lg={12}>
                                 <ModelDiameter diameter={dreamcatcher.diameter} />
 
                             </Grid>
-                            <Grid item xs={12} sm={12} md={12} lg={12} style={border}>
+                            <Grid item xs={12} sm={12} md={12} lg={12}>
                                 <ModelInventory amount={dreamcatcher.amount} />
 
                             </Grid>
-                            <Grid item xs={12} sm={12} md={12} lg={12} style={border}>
+                            <Grid item xs={12} sm={12} md={12} lg={12}>
                                 <ModelHandMade />
 
                             </Grid>
-                            <Grid item xs={12} sm={12} md={12} lg={12} style={border}>
+                            <Grid item xs={12} sm={12} md={12} lg={12}>
                                 <ModelPrice price={dreamcatcher.price} />
 
                             </Grid>
-                            <Grid item xs={12} sm={12} md={12} lg={12} style={border}>
+                            <Grid item xs={12} sm={12} md={12} lg={12} >
                                 <AmountSelection amount={dreamcatcher.amount} func={this.handleAmount} />
                             </Grid>
-                            <Grid item xs={12} sm={12} md={12} lg={12} style={border}>
+                            <Grid item xs={12} sm={12} md={12} lg={12} >
                                 <AddToCartButton amount={this.state.amount} dreamcatcher={dreamcatcher} func={this.handleAddToCart} />
                             </Grid>
                         </Grid>
@@ -136,22 +136,24 @@ const ModelHandMade = () => {
 
 const ModelPrice = (props) => {
     return (
-        <h6 className="center">{props.price} &#8362;</h6>
+        <h6 className="center details-price">{props.price} &#8362;</h6>
     );
 }
+
 
 const AmountSelection = (props) => {
     const amount = props.amount;
     const options = Array.from({ length: amount }, (_, i) => i + 1);
     return (
-        <div className="center" style={border}>
+        <div className="center">
             <TextField
-                id="standard-select-currency"
+                variant="outlined"
                 select
+                size="small"
+                color='primary'
                 label="כמות"
                 defaultValue={1}
-                onChange={props.func}
-            >
+                onChange={props.func}>
                 {options.map((option) => (
                     <MenuItem key={option} value={option}>
                         {option}
@@ -161,6 +163,7 @@ const AmountSelection = (props) => {
         </div>
     );
 }
+
 
 const AddToCartButton = (props) => {
     const [open, setOpen] = React.useState(false);
@@ -210,7 +213,7 @@ export default compose(
 
 
 const border = {
-    // border: "1px solid red"
+    border: "1px solid red"
 }
 
 const paraStyle = {

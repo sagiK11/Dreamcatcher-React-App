@@ -44,11 +44,13 @@ export const cartReducer = (state = initState, action) => {
             console.log("item removed from cart");
             const newArray = state.items.filter((item) => item.model !== action.item.model)
             const price = parseInt(action.item.price.slice(0, 3));
-
+            const amount = action.item.amount;
             return {
                 ...state,
-                items: newArray,
+                items: [...newArray],
                 cartPrice: state.cartPrice - price,
+                itemsNumber: state.itemsNumber - amount,
+
             }
         }
         default: return state;

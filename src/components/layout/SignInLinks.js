@@ -10,7 +10,7 @@ const SignInLinks = (props) => {
     const itemsNumber = props.cart.itemsNumber;
     const adminEmail = "sagi@gmail.com"
     const admin = props.user.auth.email === adminEmail;
-    const addItemLink = admin ? <NavLink to="/add-item" className="black-text">הוספת פריט</NavLink> : null;
+    const addItemLink = admin ? <NavLink to="/add-item" className="black-text">לוח בקרה</NavLink> : null;
 
     return (
         <ul className="right hide-on-med-and-down">
