@@ -6,7 +6,6 @@ import Shipping from "./components/pages/shipping/Shipping";
 import About from "./components/pages/about/About";
 import PersonalOrders from "./components/pages/personalorders/PersonalOrders";
 import Shop from "./components/pages/shop/Shop";
-import AddDreamcatcher from "./components/pages/console/AddDreamcatcher"
 import DreamcatcherDetails from "./components/dreamcatcher/dreamcatcherDetails"
 import SignIn from "./components/pages/auth/SignIn"
 import SignUp from "./components/pages/auth/SignUp"

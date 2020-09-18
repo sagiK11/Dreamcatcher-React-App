@@ -56,6 +56,6 @@
 .remove-item:hover{
     color:red
 }
-.my-basket-title{
-    /* border-bottom: 1px solid grey; */
+.note-coupon:focus{
+    background-color: transparent;
 }

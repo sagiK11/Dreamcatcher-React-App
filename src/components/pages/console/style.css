@@ -9,10 +9,17 @@
     background-color: #ccada4 !important;
     color:black
   }
+.a-field{
+    margin: 0.5em 0em 0.5em 0;
+    padding: .5em 0 .5em 0;
+    /* border: 2px solid red */
+}
+.c-title{
+    padding:1em;
+}
   
-.c-label{
-    font-size: 1.2rem;
-  
+.c-divider{
+    min-width: 30rem;
 }
 .c-button{
     padding: 0.5em 1em 0.5em 1em;
@@ -33,4 +40,8 @@
 .input-fd{
     max-width: 13em;
     max-height: 3em;
+}
+
+.border{
+    /* border: 2px solid red; */
 }

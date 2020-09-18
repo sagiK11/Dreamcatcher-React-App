@@ -34,13 +34,13 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps)(Navbar);
 
 //Show navbar on when user scrolls up and hide it when he scrolls down.
-var prevScrollpos = window.pageYOffset;
+let prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
-  var currentScrollPos = window.pageYOffset;
+  let currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
     document.getElementById("navbar").style.top = "0";
   } else {
-    document.getElementById("navbar").style.top = "-70px";
+    document.getElementById("navbar").style.top = "-5em";
   }
   prevScrollpos = currentScrollPos;
 } 

@@ -4,6 +4,7 @@ import { addDreamcatcher } from "../../../store/actions/dreamActions"
 import { Redirect } from "react-router-dom"
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+import { Button, Grid, TextField, Typography } from "@material-ui/core";
 
 
 
@@ -30,15 +31,16 @@ class AddDreamcatcher extends Component {
             }
 
         } else {
-            const price = event.target.id === "price" ? " ש\"ח " : "";
+            console.log(event.target.value)
             this.setState({
-                [event.target.id]: event.target.value + price
+                [event.target.id]: event.target.value
             })
         }
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
+        console.log(this.state);
         this.props.addDreamcatcher(this.state);
     }
 
@@ -53,54 +55,62 @@ class AddDreamcatcher extends Component {
         const categoryOptions = [
             'מחזיק מפתחות', 'מפית', 'מארז', 'לוכד חלומות', 'סט'
         ]
-        const catDefOption = categoryOptions[0];
+        const catDefOption = "בחר סוג פריט";
         const dreamcatcher = categoryOptions[3];
 
         return (
             <div className="container" >
-                <form className="white" onSubmit={this.handleSubmit} dir="rtl">
-                    <h5 className="grey-text text-darken-3">הוסף פריט לחנות</h5>
+                <Grid container alignItems="stretch">
+                    <Grid item xs={12} sm={12} md={12} lg={12}>
+                        <Typography component="h1">הוסף פריט לחנות</Typography>
+                    </Grid>
+                    <InputField label="העתק כתובת קישור לתמונה" id="img" handleChange={this.handleChange} />
+                    <InputField label="שם הדגם" id="model" handleChange={this.handleChange} />
+                    <InputField label="מחיר" id="price" handleChange={this.handleChange} />
+                    <InputField label="כמות במלאי" id="amount" handleChange={this.handleChange} />
+                    <InputField label="תיאור" id="description" handleChange={this.handleChange} />
+                    <Grid item xs={12} sm={12} md={12} lg={12}>
+                        <label htmlFor="diameter" className="c-label">קטגוריה</label>
+                        <div className="input-field input-fd" >
+                            <Dropdown options={categoryOptions} onChange={this.handleChange}
+                                value={catDefOption} placeholder="Select an option" />
+                        </div>
 
-                    <label htmlFor="img" sclassName="c-label">העתק כתובת קישור לתמונה</label>
-                    <div className="input-field">
-                        <textarea id="img" onChange={this.handleChange}></textarea>
-                    </div>
-                    <label htmlFor="model" className="c-label">שם הדגם</label>
-                    <div className="input-field input-fd">
-                        <input id="model" onChange={this.handleChange}></input>
-                    </div>
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={12} lg={12}>
 
-                    <label htmlFor="price" className="c-label">מחיר</label>
-                    <div className="input-field input-fd">
-                        <input id="price" onChange={this.handleChange}></input>
-                    </div>
-                    <label htmlFor="diameter" className="c-label">קטגוריה</label>
-                    <div className="input-field input-fd" >
-                        <Dropdown options={categoryOptions} onChange={this.handleChange}
-                            value={catDefOption} placeholder="Select an option" />
-                    </div>
-
-                    {this.state.category === dreamcatcher ?
-                        <DiameterDropDown def={diamDefOption} func={this.handleChange} /> : null}
-
-                    <label htmlFor="amount" className="c-label">כמות במלאי</label>
-                    <div className="input-field input-fd">
-                        <input id="amount" onChange={this.handleChange}></input>
-                    </div>
-
-                    <label htmlFor="description c-label" >תיאור</label>
-                    <div className="input-field input-fd">
-                        <textarea id="description" style={{ minHeight: "55px", minWidth: "800px" }} onChange={this.handleChange}></textarea>
-                    </div>
-
-                    <div className="input-field" id="submit-button">
-                        <button className="c-button">הוסף</button>
-                    </div>
-                </form>
+                        {this.state.category === dreamcatcher ?
+                            <DiameterDropDown def={diamDefOption} func={this.handleChange} /> : null}
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={12} lg={12}>
+                        <Button
+                            id="submit-button"
+                            color="primary"
+                            variant="contained"
+                            onClick={this.handleSubmit}
+                        >הוסף</Button>
+                    </Grid>
+                </Grid>
             </div >
         );
     }
 
+}
+
+const InputField = (props) => {
+    const { label, handleChange, id } = props;
+    return (
+        <Grid item xs={12} sm={12} md={12} lg={12} className="a-field">
+            <TextField
+                label={label}
+                variant="outlined"
+                color="secondary"
+                onChange={handleChange}
+                id={id}
+                multiline
+            />
+        </Grid>
+    );
 }
 
 const mapStateToProps = (state) => {
