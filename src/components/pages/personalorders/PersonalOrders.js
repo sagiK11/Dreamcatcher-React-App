@@ -43,7 +43,7 @@ const MainSection = () => {
                     </div>
 
                 </Box>
-                <Animate easeType="ease" play start={{ transform: 'translate(40em, 0)' }} end={{ transform: 'translate(0, 0)' }} duration={2}>
+                <Animate easeType="ease" play start={{ opacity: '0' }} end={{ opacity: '1' }} duration={3}>
                     <Box justifyContent="flex-start" className="hide-on-med-and-down">
                         <img src={image} alt="תמונה - לוכד חלומות" className="responsive-img circle" style={imgStyle} />
                     </Box>

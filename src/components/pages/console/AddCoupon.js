@@ -8,7 +8,6 @@ import { updateCoupon } from "../../../store/actions/couponActions"
 import { deleteCoupon } from "../../../store/actions/couponActions"
 import { firestoreConnect } from "react-redux-firebase"
 import { compose } from "redux"
-import { useTheme } from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles({

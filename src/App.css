@@ -21,5 +21,8 @@ h3{
 }
 button:focus{
   background-color: #ccada4;
-  color:black 
+  color:black;
+}
+::selection{
+  background-color:  #ccada4;
 }

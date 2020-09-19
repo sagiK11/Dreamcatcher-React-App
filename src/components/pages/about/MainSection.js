@@ -1,50 +1,38 @@
 import React, { Component } from "react";
-import Img1 from "../../../img/img_1.JPG"
 import "./style.css"
+import Grid from "@material-ui/core/Grid"
+import { makeStyles, Typography } from "@material-ui/core"
 
-class MainSection extends Component {
-
-    render() {
-        return (
-            <div className="">
-                <div className="section container" >
-                    <div className="col s12 m12 l12" >
-                        <h1 className="center black-text" style={titleStyle}>קצת עליי</h1>
-
-                        <div className="row">
-                            <div className="col s12 m6 l6">
-                                <img src={Img1} alt="" className="responsive-img circle" style={imgStyle} />
-                            </div>
-                            <div className="col s12 m6 l6 " dir="rtl">
-                                <p className="flow-text black-text about-me-text " style={textStyle}>
-                                    קוראים לי הילה, אני בת 25 וכל חיי נשמתי עיצוב ופריטים מעבודת יד.
-                                    את לוכדי החלומות שלי התחלתי להכין לפני שלוש שנים כשהתחלתי ללמוד כלכלה וחשבונאות באונ' בן גוריון שבנגב.
-                                    .תחילת הלימודים הייתה כרוכה במעבר לדירה שכורה בבאר שבע,
-                                    היה לי חשוב להפוך את הדירה לאווירה ביתית ומלאה בוהו שייק, התקציב היה דל אז התחלתי להכין פריטים מעבודת יד.
-                                    התאהבתי בהכנת לוכדי חלומות ובעקבות כך פתחתי את "לוכדי החלומות של הילה". אני מקווה שתאהבו את העיצובים ואשמח לעזור לכם לעצב את הדגם המושלם לחדר או לכל פינה בבית.
-                    </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
+const useStyles = makeStyles({
+    text: {
+        fontSize: "1.5rem",
+        lineHeight: "2.2em",
+        padding: ".5em 1.5em 1em 1.5em",
+    },
+    title: {
+        padding: ".5em",
+        letterSpacing: "0.2em",
+        fontSize: "3rem",
     }
-
-}
-
-
-const imgStyle = {
-    marginTop: '60px',
-    borderRadius: "10%",
-
-}
-const textStyle = {
-    marginTop: "60px",
-}
-
-const titleStyle = {
-    letterSpacing: "5px",
+})
+const MainSection = () => {
+    const classes = useStyles();
+    return (
+        <Grid container>
+            <Grid item xs={12} sm={12} md={12} lg={12} justify="center">
+                <Typography align="center" className={classes.title} >קצת עליי</Typography>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={12}>
+                <Typography paragraph variant="body1" className={classes.text}>
+                    קוראים לי הילה, אני בת 25 וכל חיי נשמתי עיצוב ופריטים מעבודת יד.
+                    את לוכדי החלומות שלי התחלתי להכין לפני שלוש שנים כשהתחלתי ללמוד כלכלה וחשבונאות באונ' בן גוריון שבנגב.
+                    תחילת הלימודים הייתה כרוכה במעבר לדירה שכורה בבאר שבע,
+                    היה לי חשוב להפוך את הדירה לאווירה ביתית ומלאה בוהו שייק, התקציב היה דל אז התחלתי להכין פריטים מעבודת יד.
+                    התאהבתי בהכנת לוכדי חלומות ובעקבות כך פתחתי את "לוכדי החלומות של הילה". אני מקווה שתאהבו את העיצובים ואשמח לעזור לכם לעצב את הדגם המושלם לחדר או לכל פינה בבית.
+                </Typography>
+            </Grid>
+        </Grid>
+    );
 }
 
 export default MainSection;
