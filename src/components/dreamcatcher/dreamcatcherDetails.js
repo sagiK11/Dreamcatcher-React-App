@@ -9,6 +9,8 @@ import Grid from "@material-ui/core/Grid"
 import TextField from "@material-ui/core/TextField"
 import MenuItem from '@material-ui/core/MenuItem';
 import AddDialog from "./AddToCartDialog"
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 
 
 class DreamcatcherDetails extends Component {
@@ -86,16 +88,18 @@ class DreamcatcherDetails extends Component {
             );
         } else {
             return (
-                <Grid container>
-                    <Grid item justify="center">
-                        <p>טוען פריט..</p>
+                <Grid container className="valign-wrapper" justify="center" style={{ height: "10rem" }}>
+                    <Grid item >
+                        <CircularProgress color="primary" />
+
                     </Grid>
                 </Grid>
             );
         }
     }
-
 }
+
+
 
 const ModelTitle = (props) => {
     return (
