@@ -4,7 +4,7 @@
     background:url("../../../img/bg_1.JPG");
     background-size: cover;
     background-position-y: center;
-    min-height: 1000px;
+    min-height: 40em;
     background-repeat:no-repeat;
   
   }
@@ -37,7 +37,6 @@
       margin:0;
       padding:0.3em;
     }
-   
   
   }
 

@@ -5,7 +5,7 @@ import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
 import AddDreamcatcher from "./AddDreamcatcher"
-import Coupon from "./Coupon"
+import AddCoupon from "./AddCoupon"
 import "./style.css"
 
 const Console = (props) => {
@@ -22,15 +22,14 @@ const Console = (props) => {
                     <Tab className="tab" label="הוספת פריט" />
                     <Tab className="tab" label="יצירת קופון" />
                     <Tab className="tab" label="סטטיסטיקה" />
-                    <Tab className="tab" label="מייל תפוצה" />
-
+                    <Tab className="tab" label="מייל תפוצה ללקוחות" />
                 </Tabs>
             </AppBar>
             <TabPanel value={value} index={0}>
                 <AddDreamcatcher />
             </TabPanel>
             <TabPanel value={value} index={1}>
-                <Coupon />
+                <AddCoupon />
             </TabPanel>
         </div>
     );
@@ -50,9 +49,3 @@ function TabPanel(props) {
         </div>
     );
 }
-
-// TabPanel.propTypes = {
-//     children: PropTypes.node,
-//     index: PropTypes.any.isRequired,
-//     value: PropTypes.any.isRequired,
-// };

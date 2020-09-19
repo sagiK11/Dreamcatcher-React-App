@@ -1,13 +1,4 @@
 
-.dreamcatcher-card:focus{
-    color:black;
-}
-.dreamcatcher-card:hover{
-    color:black;
-}
-.dreamcatcher-card{
-    color:black;
-}
 
 .card-button{
     border-radius: 3em;
@@ -61,10 +52,6 @@
     color:black;
 }
 
-.MuiCardContent-root{
-    background-color: white;
-    color:black;
-}
 .img-details{
     border-radius: 2em;
 }
@@ -72,11 +59,23 @@
     padding:3em
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 .MuiDialog-paper{
     min-width: 25em;
     min-height: 25em;
 }
-@media screen and (max-width:370px){
+@media screen and (max-width:600px){
     .MuiDialog-paper{
         min-width: calc(100% - 30px);
         min-height: calc(100%- 50px);

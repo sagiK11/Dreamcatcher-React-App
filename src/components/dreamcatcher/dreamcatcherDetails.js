@@ -86,11 +86,11 @@ class DreamcatcherDetails extends Component {
             );
         } else {
             return (
-                <div className="container">
-                    <div className="center">
+                <Grid container>
+                    <Grid item justify="center">
                         <p>טוען פריט..</p>
-                    </div>
-                </div>
+                    </Grid>
+                </Grid>
             );
         }
     }

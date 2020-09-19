@@ -1,59 +1,47 @@
 import React, { Component } from 'react'
-import Box from '@material-ui/core/Box';
-
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 class Filter extends Component {
-    componentDidMount() {
-        this.allCategories.focus();
-    }
 
     render() {
         return (
-            <div className="container">
-                <Box display="flex" flexWrap="wrap" justifyContent="center">
-                    <Box>
-                        <a ref={(input) => { this.allCategories = input }}
-                            onClick={() => this.props.filter("all")} href='#!' className="a-filter">
-                            <h6 style={{ paddingRight: "10px" }}>כל הקטלוג</h6></a>
-                    </Box>
-                    <Box>
-                        <a onClick={() => this.props.filter("סט")} href='#!' className="a-filter">
-                            <h6 style={{ paddingRight: "10px" }}>סטים קסומים</h6></a>
-                    </Box>
-                    <Box>
-                        <a onClick={() => this.props.filter("לוכד חלומות")} href='#!' className="a-filter" >
-                            <h6 style={{ paddingRight: "10px" }}>לוכדי חלומות</h6></a>
-                    </Box>
-                    <Box>
-                        <a onClick={() => this.props.filter("", "70")} href='#!' className="a-filter">
-                            <h6 style={{ paddingRight: "10px" }}>שבעים ס"מ קוטר</h6></a>
-                    </Box>
-                    <Box>
-                        <a onClick={() => this.props.filter("", "60")} href='#!' className="a-filter">
-                            <h6 style={{ paddingRight: "10px" }}>שישים ס"מ קוטר</h6></a>
-                    </Box>
-                    <Box>
-                        <a onClick={() => this.props.filter("", "50")} href='#!' className="a-filter">
-                            <h6 style={{ paddingRight: "10px" }}>חמישים ס"מ קוטר</h6></a>
-                    </Box>
-                    <Box>
-                        <a onClick={() => this.props.filter("", "40")} href='#!' className="a-filter">
-                            <h6 style={{ paddingRight: "10px" }}>ארבעים ס"מ קוטר</h6></a>
-                    </Box>
-                    <Box>
-                        <a onClick={() => this.props.filter("", "30")} href='#!' className="a-filter">
-                            <h6 style={{ paddingRight: "10px" }}>שלושים ס"מ קוטר</h6></a>
-                    </Box>
-                    <Box>
-                        <a onClick={() => this.props.filter("מחזיק מפתחות")} href='#!' className="a-filter">
-                            <h6 style={{ paddingRight: "10px" }}>מחזיק מפתחות לרכב</h6></a>
-                    </Box>
-                    <Box>
-                        <a onClick={() => this.props.filter("מפיות")} href='#!' className="a-filter">
-                            <h6 style={{ paddingRight: "10px" }}>מפיות סרוגות</h6></a>
-                    </Box>
-                </Box>
-            </div >
+            <div className="container f-grid">
+                <Grid container justify="center" >
+                    <Grid item xs={12} sm={12} md={3} lg={3}>
+                        <Button fullWidth variant="outlined" color="primary" onClick={() => this.props.filter("all")}>כל הקטלוג</Button>
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={3} lg={3}>
+                        <Button fullWidth variant="outlined" color="primary" onClick={() => this.props.filter("סט")}>סטים קסומים</Button>
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={3} lg={3}>
+                        <Button fullWidth variant="outlined" color="primary" onClick={() => this.props.filter("לוכד חלומות")}>לוכד חלומות</Button>
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={3} lg={3}>
+                        <Button fullWidth variant="outlined" color="primary" onClick={() => this.props.filter("מחזיק מפתחות")}>מחזיק מפתחות</Button>
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={2} lg={2}>
+                        <Button fullWidth variant="outlined" color="primary" onClick={() => this.props.filter("מפיות")}>מפיות</Button>
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={2} lg={2}>
+                        <Button fullWidth variant="outlined" color="primary" onClick={() => this.props.filter("", "70")}>70 ס"מ קוטר</Button>
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={2} lg={2}>
+                        <Button fullWidth variant="outlined" color="primary" onClick={() => this.props.filter("", "60")}>60 ס"מ קוטר</Button>
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={2} lg={2}>
+                        <Button fullWidth variant="outlined" color="primary" onClick={() => this.props.filter("", "50")}>50 ס"מ קוטר</Button>
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={2} lg={2}>
+                        <Button fullWidth variant="outlined" color="primary" onClick={() => this.props.filter("", "40")}>40 ס"מ קוטר</Button>
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={2} lg={2}>
+                        <Button fullWidth variant="outlined" color="primary" onClick={() => this.props.filter("", "30")}>30 ס"מ קוטר</Button>
+                    </Grid>
+                </Grid>
+            </div>
+
         );
     }
 }

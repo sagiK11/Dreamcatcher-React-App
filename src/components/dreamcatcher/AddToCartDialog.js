@@ -40,10 +40,10 @@ const DialogItem = ({ dreamcatcher, amount }) => {
     return (
         <div className="dialog-img">
             <Grid container className="card-item" direction="row" >
-                <Grid item xs={12} sm={6} md={6} lg={6}  >
+                <Grid item xs={12} sm={4} md={4} lg={4}  >
                     <img src={dreamcatcher.img} className="card-img" alt="לוכד חלומות" />
                 </Grid>
-                <Grid item xs={12} sm={6} md={6} lg={6} className="card-col" >
+                <Grid item xs={12} sm={8} md={8} lg={8} className="card-col" >
                     <h6>{dreamcatcher.model}</h6>
                     <h6> {totalPrice} &#8362;</h6>
                     <span>כמות: {amount} </span>

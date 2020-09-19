@@ -43,7 +43,7 @@ const rrfProps = {
 
 
 const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
-const theme = createMuiTheme({
+export const theme = createMuiTheme({
   direction: 'rtl',
   palette: {
     primary: {

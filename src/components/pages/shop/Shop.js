@@ -6,7 +6,7 @@ import { firestoreConnect } from "react-redux-firebase"
 import { compose } from "redux"
 import { Link } from "react-router-dom"
 import { Animate } from "react-simple-animate";
-import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
 import "./style.css"
 import Filter from "./Filter"
 
@@ -57,7 +57,7 @@ const MainSection = ({ dreamcatchers, filter }) => {
         <div >
             <div className="center" style={{ marginTop: "7em" }}>
                 <Animate play delay={2} duration={2} start={{ opacity: 0 }} end={{ opacity: 1 }}>
-                    <h2 style={titleStyle}>לוכדי החלומות של הילה קטלוג</h2>
+                    <h2 style={titleStyle}>קטלוג לוכדי החלומות של הילה</h2>
                 </Animate>
             </div>
             <Filter filter={filter} />
@@ -67,17 +67,17 @@ const MainSection = ({ dreamcatchers, filter }) => {
 }
 const Collection = ({ dreamcatchers }) => {
     return (
-        <div className="container">
-            <Box display="flex" flexWrap="wrap" justifyContent="center">
-                {dreamcatchers && dreamcatchers.map((item) => {
-                    return (
-                        <Link to={"/dreamcatcher/" + item.id} key={item.id} >
+        <Grid container justify="center">
+            {dreamcatchers && dreamcatchers.map((item) => {
+                return (
+                    <Link to={"/dreamcatcher/" + item.id} key={item.id} >
+                        <Grid item xs={12} sm={12} md={12} lg={12}>
                             <Dreamcatcher dreamcatcher={item} />
-                        </Link>
-                    );
-                })}
-            </Box>
-        </div>
+                        </Grid>
+                    </Link>
+                );
+            })}
+        </Grid>
     );
 }
 

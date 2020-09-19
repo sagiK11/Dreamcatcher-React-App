@@ -16,7 +16,10 @@ body{
 h3{
   margin:0;
 }
-
 .dream-edges{
   background-image: radial-gradient(farthest-corner at 99% 55%,#ffe7d9,white,white);
+}
+button:focus{
+  background-color: #ccada4;
+  color:black 
 }

@@ -3,6 +3,7 @@ import image from "../../../img/img_9.JPG"
 import Footer from "../../layout/Footer"
 import { Animate } from "react-simple-animate";
 import Box from "@material-ui/core/Box"
+
 class PersonalOrders extends Component {
     render() {
         return (
@@ -12,7 +13,6 @@ class PersonalOrders extends Component {
             </div>
         );
     }
-
 }
 
 export default PersonalOrders;
@@ -26,7 +26,6 @@ const MainSection = () => {
                 <Box >
                     <div>
                         <h1>הזמנות אישיות</h1>
-                        <p></p>
                         <p className="flow-text">יש אפשרות לבצע הזמנות אישיות</p>
                         <p>ולעצב ביחד איתי את לוכד החלומות והסטים הקסומים שתמיד חלמת עליהם</p>
                         <p className="flow-text"><b className="bold">ללא תוספת תשלום!</b></p>

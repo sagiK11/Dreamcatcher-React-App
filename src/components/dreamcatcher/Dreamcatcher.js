@@ -13,7 +13,6 @@ const Dreamcatcher = (props) => {
 
     return (
         <div style={{ padding: "0 1em 2em 1em", }}>
-
             <Card variant="outlined">
                 <CardActionArea >
                     <CardMedia style={{ height: "400px", maxWidth: "385px" }}
@@ -30,11 +29,10 @@ const Dreamcatcher = (props) => {
                 <Box className="buttons" display="flex" flexWrap="wrap" bgcolor="background.paper" justifyContent="center">
                     <Box >
                         <div className="card-button">
-                            <span><Icon className="icon">shopping_basket_icon</Icon></span>
+                            <Icon className="icon">shopping_basket_icon</Icon>
                             <span className="button-text">הוספה לסל </span>
                         </div>
                     </Box>
-
                 </Box>
             </Card>
         </div >
