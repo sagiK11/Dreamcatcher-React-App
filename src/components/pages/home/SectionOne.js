@@ -3,11 +3,9 @@ import { makeStyles, Typography, Grid } from '@material-ui/core';
 
 
 
-
-
-function SectionOne() {
+const SectionOne = () => {
     return (
-        <Grid container className="intro-text">
+        <Grid container className="intro-text" >
             <Grid item xs={12} sm={12} md={12} lg={12}>
                 <Text />
             </Grid>

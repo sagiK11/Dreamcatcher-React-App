@@ -91,7 +91,6 @@ const AddNewCoupon = (props) => {
                     onChange={props.handle}
                     variant="outlined"
                     color="secondary"
-                    multiline
                 />
             </Grid>
             <Grid item xs={12} sm={12} md={3} lg={3} className="border">
@@ -101,7 +100,6 @@ const AddNewCoupon = (props) => {
                     onChange={props.handle}
                     variant="outlined"
                     color="secondary"
-                    multiline
                 />
 
             </Grid>
@@ -133,7 +131,6 @@ const ManageCoupons = (props) => {
                     onChange={props.change}
                     variant="outlined"
                     color="secondary"
-                    multiline
                 />
             </Grid>
             <Grid item xs={12} sm={12} md={3} lg={3} className="border">

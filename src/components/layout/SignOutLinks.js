@@ -9,8 +9,7 @@ const SignOutLinks = (props) => {
     const itemsNumber = props.cart.itemsNumber;
     return (
         <ul className="right hide-on-med-and-down">
-            <li> <NavLink to="/signin" className="link">התחברות</NavLink> </li>
-            <li> <NavLink to="/signup" className="link">הרשמה</NavLink> </li>
+            <li> <NavLink to="/authentication" className="link">התחברות/הרשמה</NavLink> </li>
             <li> <NavLink to="/about" className="link">קצת עליי</NavLink> </li>
             <li> <NavLink to="/shipping-policy" className="link">מדיניות משלוחים</NavLink> </li>
             <li> <NavLink to="/personal-orders" className="link"> הזמנות אישיות</NavLink> </li>

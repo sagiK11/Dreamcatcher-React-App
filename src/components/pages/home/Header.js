@@ -2,6 +2,7 @@ import React from "react"
 import { Grid } from '@material-ui/core';
 import "./style.css"
 
+
 const Header = () => {
     return (
         <Grid container className="section-1" >
@@ -15,3 +16,4 @@ const Header = () => {
 
 
 export default Header;
+

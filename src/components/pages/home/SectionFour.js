@@ -4,9 +4,12 @@ import { Parallax } from "react-parallax"
 
 function SectionFour() {
     return (
-        <Parallax bgImage={Img3} strength={800} style={{ height: 300 }} />
+        <div className="section-4">
+            <Parallax className="section-4" bgImage={Img3} strength={250} />
+        </div>
     );
-}
+}//            <Parallax className="section-4" bgImage={Img3} strength={450} />
+
 
 export default SectionFour;
 

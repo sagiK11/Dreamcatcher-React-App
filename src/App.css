@@ -26,3 +26,12 @@ button:focus{
 ::selection{
   background-color:  #ccada4;
 }
+
+input {
+  border-bottom: none!important;
+  box-shadow: none!important;
+}
+input:focus {
+  border-bottom: none!important;
+  box-shadow: none!important;
+}

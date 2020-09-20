@@ -216,9 +216,6 @@ export default compose(
 )(DreamcatcherDetails)
 
 
-const border = {
-    border: "1px solid red"
-}
 
 const paraStyle = {
     lineHeight: "1.8rem",

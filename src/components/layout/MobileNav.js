@@ -12,11 +12,11 @@ class MobileNav extends Component {
           <i className="material-icons black-text">menu</i>
         </a>
         <ul className="sidenav side-nav" id="mobile-menu" style={{ postion: "fixed", zIndex: "4000" }} >
-          <li><a href="/" className="black-text"> בית </a></li>
-          <li><a href="/shop" className="black-text">  חנות </a> </li >
-          <li><a href="/personal-orders" className="black-text"> הזמנות אישיות </a> </li>
-          <li><a href="/shipping-policy" className="black-text"> מדיניות משלוחים </a></li>
-          <li><a href="/about" className="black-text">קצת עליי </a></li>
+          <li><a href="/" className="black-text">בית</a></li>
+          <li><a href="/shop" className="black-text">חנות</a> </li >
+          <li><a href="/personal-orders" className="black-text">הזמנות אישיות</a> </li>
+          <li><a href="/shipping-policy" className="black-text">מדיניות משלוחים</a></li>
+          <li><a href="/about" className="black-text">קצת עליי</a></li>
           <li><a href="/cart" className="black-text">הסל שלי</a></li>
           {links}
         </ul >
@@ -29,10 +29,7 @@ class MobileNav extends Component {
 
 const SignedOutLinks = () => {
   return (
-    <div>
-      <li> <a href="/signin" className="black-text">התחברות</a> </li>
-      <li> <a href="/signup" className="black-text">הרשמה</a> </li>
-    </div>
+    <li> <a href="/authentication" className="black-text">התחברות/הרשמה</a> </li>
   );
 
 }

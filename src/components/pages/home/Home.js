@@ -7,7 +7,6 @@ import SectionFour from "./SectionFour"
 import SectionFive from "./SectionFive"
 import Footer from "../../layout/Footer"
 
-
 const Home = () => {
   return (
     <div>
@@ -18,7 +17,6 @@ const Home = () => {
       <SectionFour />
       <SectionFive />
       <Footer />
-
     </div>
   );
 };
