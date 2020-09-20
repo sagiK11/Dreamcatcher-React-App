@@ -45,8 +45,7 @@ class Authentication extends Component {
         return (
             <AppBar position="static">
                 <Tabs indicatorColor="secondary"
-                    value={this.state.value} onChange={this.handleTabChange}
-                    indicatorColor="secondary">
+                    value={this.state.value} onChange={this.handleTabChange}>
                     <Tab className="tab" label="התחברות" />
                     <Tab className="tab" label="הרשמה" />
                 </Tabs>
