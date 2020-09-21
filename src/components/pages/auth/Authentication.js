@@ -44,7 +44,7 @@ class Authentication extends Component {
 
         return (
             <AppBar position="static">
-                <Tabs indicatorColor="secondary"
+                <Tabs indicatorColor="secondary" centered
                     value={this.state.value} onChange={this.handleTabChange}>
                     <Tab className="tab" label="התחברות" />
                     <Tab className="tab" label="הרשמה" />
@@ -236,11 +236,11 @@ const useStyles = makeStyles({
     button: {
         color: "black",
         backgroundColor: "#ccada4",
-        marginRight: "1em"
+        fontSize: "1.3rem"
     },
     input: {
         margin: ".1em",
-        padding: ".3em",
+        padding: ".3em 0 .3em 0em",
     },
     img: {
         maxWidth: "25em",

@@ -3,10 +3,10 @@ import logo from "../../img/logo.svg";
 import { Link } from "react-router-dom";
 import "./style.css"
 
-const Logo = () => {
+const Logo = (props) => {
   return (
-    <Link to="/" className="brand-logo logo responsive-img">
-      <img src={logo} alt="לוגו" style={{ height: 80, }} />
+    <Link to="/" >
+      <img src={logo} className="brand-logo logo" alt="לוגו" style={props.style} />
     </Link>
   );
 };

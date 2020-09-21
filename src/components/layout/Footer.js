@@ -1,40 +1,28 @@
 import React from 'react'
+import Grid from "@material-ui/core/Grid"
 import Box from "@material-ui/core/Box"
 import "./footerStyle.css"
 import Logo from './Logo'
+import { Link } from 'react-router-dom'
 
 function Footer() {
     return (
-        <footer className="page-footer dream-edges">
-            <div>
-                <Box display="flex" flexWrap="wrap" flexDirection="row" justifyContent="center">
-                    <Box>
-                        <div style={{ padding: "1em  2em 2em 5em" }}>
-                            <Logo />
-                        </div>
-                    </Box>
-                    <Box >
-                        <div style={{ padding: "0  2em 2em 5em" }}>
-                            <a href="/"><div >
-                                <p className="description">לוכדי החלומות של הילה</p>
-                                <p className="description">יצירת לוכדי חלומות בעבודת יד לעיצוב הבית</p>
-                            </div></a>
-                        </div>
-                    </Box>
-                    <Box>
-                        <div dir="ltr" className="center" style={{ padding: "0  2em 0em 2em" }}>
-                            <p ><a href="mailto:hilash95@gmail.com" className="media">hilash95@gmail.com</a></p>
-                            <p className="black-text">050-8829551</p>
-                        </div>
-
-                    </Box>
-                    <Box >
-                        <div dir="ltr" style={{ padding: "0  2em 2em 2em", }}>
-                            <p ><a href="https://www.facebook.com/לוכדי-החלומות-של-הילה-355862111817525" className="media">facebook</a></p>
-                            <p><a href="https://www.instagram.com/dreamcatcher_by_hila/" className="media" >instagram</a></p>
-                        </div>
-                    </Box>
-                </Box>
+        <footer className="dream-edges" style={{ padding: "2.5em 2em 2em 2em" }}>
+            <div className="container">
+                <Grid container justify="center" direction="row" alignContent="center">
+                    <Grid item xs={12} sm={12} md={3} lg={3} className="border">
+                        <Logo style={{ height: "4.5em" }} />
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={3} lg={3}>
+                        <Description />
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={3} lg={3}>
+                        <Media />
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={3} lg={3}>
+                        <Links />
+                    </Grid>
+                </Grid>
             </div>
 
             <div className="footer-copyright" dir="ltr">
@@ -48,4 +36,37 @@ function Footer() {
 
 export default Footer
 
+const Links = () => {
+    return (
+        <Box className="center border" dir="ltr">
+            <Box>
+                <p><a href="https://www.facebook.com/לוכדי-החלומות-של-הילה-355862111817525" className="media">facebook</a></p>
+            </Box>
+            <Box>
+                <p><a href="https://www.instagram.com/dreamcatcher_by_hila/" className="media" >instagram</a></p>
+            </Box>
+        </Box >
+    );
+}
 
+const Description = (props) => {
+    return (
+        <div className="center border">
+            <Link to="/">
+                <div >
+                    <p className="description">לוכדי החלומות של הילה</p>
+                    <p className="description">יצירת לוכדי חלומות בעבודת יד לעיצוב הבית</p>
+                </div>
+            </Link>
+        </div>
+    );
+}
+const Media = (props) => {
+    return (
+        <div dir="ltr" className="center border" >
+            <p ><a href="mailto:hilash95@gmail.com" className="media">hilash95@gmail.com</a></p>
+            <p className="black-text">050-8829551</p>
+        </div>
+
+    );
+}

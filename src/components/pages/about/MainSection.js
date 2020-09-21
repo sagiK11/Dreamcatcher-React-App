@@ -18,8 +18,8 @@ const useStyles = makeStyles({
 const MainSection = () => {
     const classes = useStyles();
     return (
-        <Grid container>
-            <Grid item xs={12} sm={12} md={12} lg={12} justify="center">
+        <Grid container style={{ backgroundColor: "white" }}>
+            <Grid item xs={12} sm={12} md={12} lg={12} >
                 <Typography align="center" className={classes.title} >קצת עליי</Typography>
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12}>

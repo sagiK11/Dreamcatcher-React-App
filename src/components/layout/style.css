@@ -25,11 +25,14 @@
 }
 
 .logo{
-    padding: 0.1em 2em 0em 1em;
+    margin-right: 1em;
+    height: 2em
 }
 @media screen and (max-width:670px){
     .logo{
         margin:0em 0em 0em 1em;
+        height: 2em
+
     }
 }
 

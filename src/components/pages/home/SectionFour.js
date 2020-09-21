@@ -8,7 +8,7 @@ function SectionFour() {
             <Parallax className="section-4" bgImage={Img3} strength={250} />
         </div>
     );
-}//            <Parallax className="section-4" bgImage={Img3} strength={450} />
+}
 
 
 export default SectionFour;
