@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import MainSection from "./MainSection"
-import { Background, Parallax } from "react-parallax"
+import { Parallax } from "react-parallax"
 import Img1 from "../../../img/img_5.JPG"
 import Img2 from "../../../img/img_15.JPG"
 import Footer from "../../layout/Footer"

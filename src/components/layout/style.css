@@ -1,38 +1,36 @@
 .sidenav-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 120vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 990;
-    will-change: opacity;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 990;
+  will-change: opacity;
 }
 
-.user-name{
-    color:black;
-    text-shadow: 1px 1px 1px grey;
+.user-name {
+  color: black;
+  text-shadow: 1px 1px 1px grey;
 }
-.link{
-    color:#776464;
-}
-
-.link:active{
-    color:black;
-}
-.link:hover{
-    color:#CCADA4;
+.link {
+  color: #776464;
 }
 
-.logo{
-    margin-right: 1em;
-    height: 2em
+.link:active {
+  color: black;
 }
-@media screen and (max-width:670px){
-    .logo{
-        margin:0em 0em 0em 1em;
-        height: 2em
-
-    }
+.link:hover {
+  color: #ccada4;
 }
 
+.logo {
+  margin-right: 1em;
+  height: 2em;
+}
+@media screen and (max-width: 670px) {
+  .logo {
+    margin: 0em 0em 0em 1em;
+    height: 2em;
+  }
+}

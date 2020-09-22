@@ -1,27 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
 
-
-
-.media{
-    text-decoration-line: underline;
-    text-decoration-color: #c7dbee;
-    color: black;
-    font-family: 'Montserrat', sans-serif;
-
+.media {
+  text-decoration-line: underline;
+  text-decoration-color: #c7dbee;
+  color: black;
+  font-family: "Montserrat", sans-serif;
 }
 
-.media:hover{
-    color: grey;
+.media:hover {
+  color: grey;
 }
 
-.description{
-    text-decoration-line: none;
-    color:black;
-    letter-spacing: .05em;
+.description {
+  text-decoration-line: none;
+  color: black;
+  letter-spacing: 0.05em;
 }
 
-.copy-right{
-    font-family: 'Montserrat', sans-serif;
+.copy-right {
+  font-family: "Montserrat", sans-serif;
 }
-
-
