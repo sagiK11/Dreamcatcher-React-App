@@ -202,7 +202,7 @@ const AddToCartButton = (props) => {
     setOpen(false);
     setSelectedValue(value);
   };
-  const isDisabled = props.dreamcatcher.amount == 0;
+  const isDisabled = props.dreamcatcher.amount === 0;
   return (
     <div className="center">
       <Button

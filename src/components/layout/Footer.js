@@ -4,8 +4,10 @@ import Box from "@material-ui/core/Box";
 import "./footerStyle.css";
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
+import { makeStyles } from "@material-ui/core";
 
 function Footer() {
+  const classes = useStyles();
   return (
     <footer className="dream-edges" style={{ padding: "2.5em 2em 2em 2em" }}>
       <div className="container">
@@ -27,7 +29,12 @@ function Footer() {
 
       <div className="footer-copyright" dir="ltr">
         <div className="container center-align  black-text copy-right">
-          &copy; 2020 Dreamcatcher by Hila
+          <b>&copy;</b>2020 Dreamcatcher by Hila
+        </div>
+        <div className="container center-align  black-text copy-right">
+          <a className={classes.devCredit} href="mailto:sagikorzak@gmail.com">
+            created by sagi korzack
+          </a>
         </div>
       </div>
     </footer>
@@ -89,3 +96,14 @@ const Media = (props) => {
     </div>
   );
 };
+
+const useStyles = makeStyles({
+  devCredit: {
+    textDecoration: "none",
+    fontSize: "0.9rem",
+    color: "black",
+    "&:hover": {
+      color: "grey",
+    },
+  },
+});

@@ -18,10 +18,10 @@ const Dreamcatcher = (props) => {
   const classes = useStyles();
 
   return (
-    <Container className={classes.card}>
+    <Container className={classes.cardContainer}>
       <Badges dreamcatcher={dreamcatcher} />
 
-      <Card variant="outlined">
+      <Card variant="outlined" className={classes.card}>
         <CardActionArea>
           <CardMedia className={classes.img} image={dreamcatcher.img} />
 
@@ -65,7 +65,7 @@ const Dreamcatcher = (props) => {
 export default Dreamcatcher;
 
 const Badges = ({ dreamcatcher }) => {
-  const isOutOfStock = dreamcatcher.amount == 0;
+  const isOutOfStock = dreamcatcher.amount === 0;
   const isOnSale = dreamcatcher.isOnSale && !isOutOfStock;
   const isNew = dreamcatcher.isNew;
   const classes = useStyles();
@@ -88,23 +88,32 @@ const Badges = ({ dreamcatcher }) => {
 const ItemBadge = ({ onSale = false }) => {
   const classes = useStyles();
   return (
-    <img src={onSale ? OnSaleBadge : NewBadge} className={classes.badge} />
+    <img
+      src={onSale ? OnSaleBadge : NewBadge}
+      alt="תו"
+      className={classes.badge}
+    />
   );
 };
 
 const NoBadge = () => {
   const classes = useStyles();
-  return <img src={EmptyBadge} className={classes.badge} />;
+  return <img src={EmptyBadge} alt="תו" className={classes.badge} />;
 };
 
 const OutOfStockRibbon = () => {
   const classes = useStyles();
-  return <img src={OutOfStockBadge} className={classes.ribbon} />;
+  return (
+    <img src={OutOfStockBadge} alt="חסר במלאי" className={classes.ribbon} />
+  );
 };
 
 const useStyles = makeStyles({
-  card: {
+  cardContainer: {
     padding: "0em 1em 2em 1em",
+  },
+  card: {
+    borderRadius: "1em 1em 1.1em 1.1em",
   },
   img: {
     height: "25em",

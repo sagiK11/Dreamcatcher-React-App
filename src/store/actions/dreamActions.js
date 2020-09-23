@@ -14,6 +14,7 @@ export const addDreamcatcher = (dreamcatcher) => {
         model: dreamcatcher.model,
         price: dreamcatcher.price,
         isNew: true,
+        isOnSale: false,
       })
       .then(() => {
         dispatch({ type: "ADD_DREAMCATCHER", dreamcatcher });

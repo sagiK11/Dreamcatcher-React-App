@@ -18,7 +18,7 @@ class MobileNav extends Component {
         <ul
           className="sidenav side-nav"
           id="mobile-menu"
-          style={{ postion: "fixed", zIndex: "4000" }}
+          style={{ postion: "fixed", zIndex: "1" }}
         >
           <li>
             <a href="/" className="black-text">
@@ -28,12 +28,12 @@ class MobileNav extends Component {
           <li>
             <a href="/shop" className="black-text">
               חנות
-            </a>{" "}
+            </a>
           </li>
           <li>
             <a href="/personal-orders" className="black-text">
               הזמנות אישיות
-            </a>{" "}
+            </a>
           </li>
           <li>
             <a href="/shipping-policy" className="black-text">
