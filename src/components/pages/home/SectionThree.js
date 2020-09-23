@@ -21,7 +21,7 @@ function SectionThree() {
         <Typography align="center" className={classes.style}>
           מאד פשוט! היכנסי לדף ההרשמה
           <span>
-            <a href="/signup">כאן</a>
+            <a href="/signup"> כאן </a>
           </span>
           ותהיי מבין הראשונות ששומעות על מבצעים והגרלות!
         </Typography>

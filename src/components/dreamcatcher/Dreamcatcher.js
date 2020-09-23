@@ -7,18 +7,25 @@ import Icon from "@material-ui/core/Icon";
 import CardMedia from "@material-ui/core/CardMedia";
 import Box from "@material-ui/core/Box";
 import "./style.css";
+import { Container, makeStyles, Badge } from "@material-ui/core";
+import Logo from "../layout/Logo";
+import OnSaleBadge from "../../img/sale_badge.svg";
+import OutOfStockBadge from "../../img/out_of_stock_badge.svg";
+import NewBadge from "../../img/new_badge.png";
+import EmptyBadge from "../../img/empty_badge.svg";
 
 const Dreamcatcher = (props) => {
   const { dreamcatcher } = props;
+  const classes = useStyles();
 
   return (
-    <div style={{ padding: "0 1em 2em 1em" }}>
+    <Container className={classes.card}>
+      <Badges dreamcatcher={dreamcatcher} />
+
       <Card variant="outlined">
         <CardActionArea>
-          <CardMedia
-            style={{ height: "400px", maxWidth: "385px" }}
-            image={dreamcatcher.img}
-          />
+          <CardMedia className={classes.img} image={dreamcatcher.img} />
+
           <CardContent>
             <Typography
               gutterBottom
@@ -53,7 +60,76 @@ const Dreamcatcher = (props) => {
           </Box>
         </Box>
       </Card>
-    </div>
+    </Container>
   );
 };
 export default Dreamcatcher;
+
+const Badges = ({ dreamcatcher }) => {
+  const isOutOfStock = dreamcatcher.amount == 0;
+  const isOnSale = dreamcatcher.isOnSale && !isOutOfStock;
+  const isNew = dreamcatcher.isNew;
+  const classes = useStyles();
+  const outOfStock = isOutOfStock ? <OutOfStockRibbon /> : null;
+
+  const cornerBadge = isNew ? (
+    <ItemBadge newItem />
+  ) : isOnSale ? (
+    <ItemBadge onSale />
+  ) : (
+    <NoBadge />
+  );
+  return (
+    <Container className={classes.container}>
+      {cornerBadge}
+      <div className="center">{outOfStock}</div>
+    </Container>
+  );
+};
+
+const ItemBadge = ({ onSale = false }) => {
+  const classes = useStyles();
+  return (
+    <img src={onSale ? OnSaleBadge : NewBadge} className={classes.badge} />
+  );
+};
+
+const NoBadge = () => {
+  const classes = useStyles();
+  return <img src={EmptyBadge} className={classes.badge} />;
+};
+
+const OutOfStockRibbon = () => {
+  const classes = useStyles();
+  return <img src={OutOfStockBadge} className={classes.ribbon} />;
+};
+
+const useStyles = makeStyles({
+  card: {
+    padding: "0em 1em 2em 1em",
+  },
+  img: {
+    height: "25em",
+    maxWidth: "24em",
+  },
+  badge: {
+    position: "relative",
+    top: "1.8em",
+    right: "1.2em",
+    zIndex: "1",
+    width: "3.5em",
+    height: "3.45em",
+  },
+  ribbon: {
+    position: "relative",
+    top: "19.75em",
+    width: "5em",
+    transform: "scale(2,2)",
+    zIndex: "1",
+  },
+  container: {
+    margin: "0",
+    padding: "0",
+    height: "3.125em",
+  },
+});
