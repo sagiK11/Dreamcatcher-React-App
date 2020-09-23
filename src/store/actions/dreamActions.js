@@ -13,6 +13,7 @@ export const addDreamcatcher = (dreamcatcher) => {
         img: dreamcatcher.img,
         model: dreamcatcher.model,
         price: dreamcatcher.price,
+        isNew: true,
       })
       .then(() => {
         dispatch({ type: "ADD_DREAMCATCHER", dreamcatcher });
