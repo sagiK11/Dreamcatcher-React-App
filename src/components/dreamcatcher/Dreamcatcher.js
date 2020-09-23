@@ -7,8 +7,7 @@ import Icon from "@material-ui/core/Icon";
 import CardMedia from "@material-ui/core/CardMedia";
 import Box from "@material-ui/core/Box";
 import "./style.css";
-import { Container, makeStyles, Badge } from "@material-ui/core";
-import Logo from "../layout/Logo";
+import { Container, makeStyles } from "@material-ui/core";
 import OnSaleBadge from "../../img/sale_badge.svg";
 import OutOfStockBadge from "../../img/out_of_stock_badge.svg";
 import NewBadge from "../../img/new_badge.png";
@@ -71,7 +70,6 @@ const Badges = ({ dreamcatcher }) => {
   const isNew = dreamcatcher.isNew;
   const classes = useStyles();
   const outOfStock = isOutOfStock ? <OutOfStockRibbon /> : null;
-
   const cornerBadge = isNew ? (
     <ItemBadge newItem />
   ) : isOnSale ? (

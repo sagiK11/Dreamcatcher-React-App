@@ -4,12 +4,16 @@ import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import Image from "react-image-enlarger";
 import { addToCart } from "../../store/actions/dreamActions";
-import Icon from "@material-ui/core/Icon";
-import Grid from "@material-ui/core/Grid";
-import TextField from "@material-ui/core/TextField";
-import MenuItem from "@material-ui/core/MenuItem";
+import {
+  Grid,
+  TextField,
+  MenuItem,
+  CircularProgress,
+  Icon,
+  Button,
+  makeStyles,
+} from "@material-ui/core";
 import AddDialog from "./AddToCartDialog";
-import CircularProgress from "@material-ui/core/CircularProgress";
 
 class DreamcatcherDetails extends Component {
   state = {
@@ -187,6 +191,7 @@ const AmountSelection = (props) => {
 const AddToCartButton = (props) => {
   const [open, setOpen] = React.useState(false);
   const [selectedValue, setSelectedValue] = React.useState("עבור לסל שלי");
+  const classes = useStyles();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -197,11 +202,16 @@ const AddToCartButton = (props) => {
     setOpen(false);
     setSelectedValue(value);
   };
+  const isDisabled = props.dreamcatcher.amount == 0;
   return (
     <div className="center">
-      <button className="details-button" onClick={handleClickOpen}>
+      <Button
+        className={isDisabled ? classes.buttonDisabled : classes.button}
+        onClick={handleClickOpen}
+        disabled={isDisabled}
+      >
         <span>הוסיפי לסל</span>
-      </button>
+      </Button>
       <AddDialog
         amount={props.amount}
         dreamcatcher={props.dreamcatcher}
@@ -241,3 +251,33 @@ export default compose(
 const paraStyle = {
   lineHeight: "1.8rem",
 };
+
+const useStyles = makeStyles({
+  button: {
+    backgroundColor: "black",
+    color: "white",
+    fontSize: "1.5em",
+    letterSpacing: "2px",
+    minHeight: "1em",
+    display: "block",
+    width: "100%",
+    borderRadius: "2em",
+    border: "2px solid black",
+    marginTop: "1em",
+    "&:hover": {
+      backgroundColor: "white",
+      color: "black",
+    },
+  },
+  buttonDisabled: {
+    backgroundColor: "white",
+    fontSize: "1.5em",
+    letterSpacing: "2px",
+    minHeight: "1em",
+    display: "block",
+    width: "100%",
+    borderRadius: "2em",
+    border: "2px solid black",
+    marginTop: "1em",
+  },
+});

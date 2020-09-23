@@ -27,27 +27,7 @@
   left: 0.3em;
 }
 .details-price {
-  margin: 0.5em 0 1em 0;
-}
-.details-button {
-  background-color: black;
-  color: white;
-  font-size: 1.5em;
-  letter-spacing: 2px;
-  min-height: 1em;
-  display: block;
-  width: 100%;
-  border-radius: 2em;
-  border: 2px solid black;
-  margin-top: 1em;
-}
-.details-button:hover {
-  background-color: white;
-  color: black;
-}
-.details-button:focus {
-  background-color: white;
-  color: black;
+  margin: 0;
 }
 
 .img-details {
@@ -65,6 +45,9 @@
   .MuiDialog-paper {
     min-width: calc(100% - 30px);
     min-height: calc(100%- 50px);
+  }
+  .details-price {
+    margin: 0.5em 0 1em 0;
   }
 }
 
