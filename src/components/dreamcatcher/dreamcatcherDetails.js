@@ -166,7 +166,11 @@ const ModelPrice = (props) => {
 
 const AmountSelection = (props) => {
   const amount = props.amount;
-  const options = Array.from({ length: amount }, (_, i) => i + 1);
+  const isDisabled = Number(amount) === 0;
+  const options = !isDisabled
+    ? Array.from({ length: amount }, (_, i) => i + 1)
+    : ["אזל"];
+
   return (
     <div className="center">
       <TextField
@@ -175,8 +179,9 @@ const AmountSelection = (props) => {
         size="small"
         color="primary"
         label="כמות"
-        defaultValue={1}
+        defaultValue={isDisabled ? "אזל" : 1}
         onChange={props.func}
+        disabled={isDisabled}
       >
         {options.map((option) => (
           <MenuItem key={option} value={option}>
@@ -202,7 +207,7 @@ const AddToCartButton = (props) => {
     setOpen(false);
     setSelectedValue(value);
   };
-  const isDisabled = props.dreamcatcher.amount === 0;
+  const isDisabled = Number(props.dreamcatcher.amount) === 0;
   return (
     <div className="center">
       <Button

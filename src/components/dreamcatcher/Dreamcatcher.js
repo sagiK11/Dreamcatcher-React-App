@@ -65,7 +65,7 @@ const Dreamcatcher = (props) => {
 export default Dreamcatcher;
 
 const Badges = ({ dreamcatcher }) => {
-  const isOutOfStock = dreamcatcher.amount === 0;
+  const isOutOfStock = Number(dreamcatcher.amount) === 0;
   const isOnSale = dreamcatcher.isOnSale && !isOutOfStock;
   const isNew = dreamcatcher.isNew;
   const classes = useStyles();
