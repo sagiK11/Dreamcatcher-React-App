@@ -5,9 +5,11 @@ import { signOut } from "../../store/actions/authActions";
 import CartIcon from "./CartIcon";
 
 const SignInLinks = (props) => {
+  const { auth, profile } = props;
   const itemsNumber = props.cart.itemsNumber;
   const adminEmail = "sagi@gmail.com";
-  const admin = props.user.auth.email === adminEmail;
+  const admin = auth.email === adminEmail;
+
   const addItemLink = admin ? (
     <NavLink to="/console" className="black-text">
       לוח בקרה
@@ -48,15 +50,15 @@ const SignInLinks = (props) => {
         </NavLink>
       </li>
       <li className="user-name">
-        שלום {props.user.profile.firstName} {props.user.profile.lastName}
+        שלום {profile.firstName} {profile.lastName}
       </li>
       <li>
-        {" "}
         <CartIcon itemsNumber={itemsNumber} />
       </li>
     </ul>
   );
 };
+
 const mapDispatchToProps = (dispatch) => {
   return {
     signOut: () => dispatch(signOut()),

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { signOut } from "../../store/actions/authActions";
 import "./style.css";
+import Logo from "./Logo";
 
 class MobileNav extends Component {
   render() {
@@ -18,8 +19,11 @@ class MobileNav extends Component {
         <ul
           className="sidenav side-nav"
           id="mobile-menu"
-          style={{ postion: "fixed", zIndex: "1" }}
+          style={{ postion: "fixed", zIndex: "1", margin: "0" }}
         >
+          <li>
+            <Logo />
+          </li>
           <li>
             <a href="/" className="black-text">
               בית

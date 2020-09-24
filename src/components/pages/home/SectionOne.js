@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { makeStyles, Typography, Grid } from "@material-ui/core";
+import { makeStyles, Typography, Grid, Container } from "@material-ui/core";
 
 const SectionOne = () => {
   return (
@@ -25,15 +25,18 @@ const useStyles = makeStyles({
 const Text = () => {
   const classes = useStyles();
   return (
-    <Typography paragraph component="p" className={classes.style}>
-      ברוכים הבאים לעולם הקסום שלי. כאן תוכלו למצוא לוכדי חלומות הנעשים בעבודת
-      יד עם המון אהבה.
-      <Link to="/shop"> בחנות </Link>
-      ישנו מגוון רחב של דגמי לוכדי חלומות. החל מסטים של לוכדי חלומות על ענף, ועד
-      ללוכדי חלומות קטנים לרכב או למחזיק מפתחות. הדגמים שלי יהפכו כל פינה בבית
-      לקסומה במיוחד שאף אחד לא יוכל לפספס. בנוסף, ישנה אפשרות לעצב ביחד איתי את
-      הדגם המושלם כך שיתאים בדיוק לפינה שלך בבית. אני אשמח לעזור לך לבחור את בד
-      הלוכד, דגם המפית, נוצות, ועוד מגוון עשיר של אפשרויות לבחירתך.
-    </Typography>
+    <Container>
+      <Typography paragraph component="p" className={classes.style}>
+        ברוכים הבאים לעולם הקסום שלי. כאן תוכלו למצוא לוכדי חלומות הנעשים בעבודת
+        יד עם המון אהבה.
+        <Link to="/shop"> בחנות </Link>
+        ישנו מגוון רחב של דגמי לוכדי חלומות. החל מסטים של לוכדי חלומות על ענף,
+        ועד ללוכדי חלומות קטנים לרכב או למחזיק מפתחות. הדגמים שלי יהפכו כל פינה
+        בבית לקסומה במיוחד שאף אחד לא יוכל לפספס. בנוסף, ישנה אפשרות לעצב ביחד
+        איתי את הדגם המושלם כך שיתאים בדיוק לפינה שלך בבית. אני אשמח לעזור לך
+        לבחור את בד הלוכד, דגם המפית, נוצות, ועוד מגוון עשיר של אפשרויות
+        לבחירתך.
+      </Typography>
+    </Container>
   );
 };
