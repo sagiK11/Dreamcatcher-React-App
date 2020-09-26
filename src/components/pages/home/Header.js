@@ -6,7 +6,6 @@ import image from "../../../img/bg_1.JPG";
 const Header = () => {
   const strengthFactor = 3;
   const strength = window.innerWidth / strengthFactor;
-  console.log(strengthFactor);
   return (
     <Parallax
       bgImage={image}
