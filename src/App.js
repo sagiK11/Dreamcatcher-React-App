@@ -20,19 +20,19 @@ class App extends Component {
           <NavBar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/shop" component={Shop} />
-            <Route exact path="/shipping-policy" component={Shipping} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/personal-orders" component={PersonalOrders} />
-            <Route exact path="/console" component={Console} />
+            <Route path="/shop" component={Shop} />
+            <Route path="/shipping-policy" component={Shipping} />
+            <Route path="/about" component={About} />
+            <Route path="/personal-orders" component={PersonalOrders} />
+            <Route path="/console" component={Console} />
             <Route
-              exact
               path="/dreamcatcher/:model"
               component={DreamcatcherDetails}
             />
-            <Route exact path="/signout" component={Home} />
-            <Route exact path="/authentication" component={Authentication} />
-            <Route exact path="/cart" component={Cart} />
+            <Route path="/signout" component={Home} />
+            <Route path="/authentication" component={Authentication} />
+            <Route path="/cart" component={Cart} />
+            <Route component={Home} />
           </Switch>
         </div>
       </BrowserRouter>

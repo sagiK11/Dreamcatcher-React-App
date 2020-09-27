@@ -9,7 +9,7 @@ const SignInLinks = (props) => {
   const itemsNumber = props.cart.itemsNumber;
   const adminEmail = "sagi@gmail.com";
   const admin = auth.email === adminEmail;
-
+  console.log(props);
   const addItemLink = admin ? (
     <NavLink to="/console" className="black-text">
       לוח בקרה
