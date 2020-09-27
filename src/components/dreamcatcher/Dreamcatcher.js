@@ -1,17 +1,20 @@
 import React from "react";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
+
 import Icon from "@material-ui/core/Icon";
-import CardMedia from "@material-ui/core/CardMedia";
-import Box from "@material-ui/core/Box";
 import "./style.css";
 import { Container, makeStyles } from "@material-ui/core";
 import OnSaleBadge from "../../img/sale_badge.svg";
 import OutOfStockBadge from "../../img/out_of_stock_badge.svg";
 import NewBadge from "../../img/new_badge.png";
 import EmptyBadge from "../../img/empty_badge.svg";
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  Typography,
+  CardMedia,
+  Box,
+} from "@material-ui/core";
 
 const Dreamcatcher = (props) => {
   const { dreamcatcher } = props;

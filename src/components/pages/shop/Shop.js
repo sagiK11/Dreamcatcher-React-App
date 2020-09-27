@@ -9,6 +9,7 @@ import { Animate } from "react-simple-animate";
 import Grid from "@material-ui/core/Grid";
 import "./style.css";
 import Filter from "./Filter";
+import { CircularProgress, Container, makeStyles } from "@material-ui/core";
 
 class Shop extends Component {
   state = {
@@ -56,17 +57,18 @@ export default compose(
 )(Shop);
 
 const MainSection = ({ dreamcatchers, filter }) => {
+  const classes = useStyles();
   return (
-    <div>
-      <div className="center" style={{ marginTop: "7em" }}>
+    <div className={classes.pageContainer}>
+      <div className="center">
         <Animate
           play
-          delay={2}
+          delay={1}
           duration={2}
-          start={{ opacity: 0 }}
+          start={{ opacity: 0.05 }}
           end={{ opacity: 1 }}
         >
-          <h2 style={titleStyle}>קטלוג לוכדי החלומות של הילה</h2>
+          <h2 className={classes.title}>קטלוג לוכדי החלומות של הילה</h2>
         </Animate>
       </div>
       <Filter filter={filter} />
@@ -77,7 +79,7 @@ const MainSection = ({ dreamcatchers, filter }) => {
 const Collection = ({ dreamcatchers }) => {
   return (
     <Grid container justify="center">
-      {dreamcatchers &&
+      {dreamcatchers ? (
         dreamcatchers.map((item) => {
           return (
             <Link to={"/dreamcatcher/" + item.id} key={item.id}>
@@ -86,13 +88,43 @@ const Collection = ({ dreamcatchers }) => {
               </Grid>
             </Link>
           );
-        })}
+        })
+      ) : (
+        <Loader />
+      )}
     </Grid>
   );
 };
 
-const titleStyle = {
-  fontWeight: "w700",
-  letterSpacing: "3px",
-  marginTop: "30px",
+const Loader = () => {
+  const classes = useStyles();
+  return (
+    <Container>
+      <Grid container justify="center" className={classes.loader}>
+        <Grid item>
+          <CircularProgress color="primary" />
+        </Grid>
+        <Grid item className={classes.text}>
+          <h5>טוען לוכדים מהממים..</h5>
+        </Grid>
+      </Grid>
+    </Container>
+  );
 };
+
+const useStyles = makeStyles({
+  pageContainer: {
+    marginTop: "7em",
+  },
+  title: {
+    fontWeight: "w700",
+    letterSpacing: "3px",
+    marginTop: "30px",
+  },
+  loader: {
+    padding: "1em",
+  },
+  text: {
+    padding: "0 1em 0 1em",
+  },
+});
