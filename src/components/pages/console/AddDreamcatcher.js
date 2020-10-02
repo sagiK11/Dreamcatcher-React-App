@@ -28,7 +28,6 @@ class AddDreamcatcher extends Component {
         });
       }
     } else {
-      console.log(event.target.value);
       this.setState({
         [event.target.id]: event.target.value,
       });
@@ -37,7 +36,6 @@ class AddDreamcatcher extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state);
     this.props.addDreamcatcher(this.state);
   };
 

@@ -37,7 +37,6 @@ class Cart extends Component {
     return totalPrice;
   }
   removeItem = (itemToRemove) => {
-    console.log(this.props);
     this.props.removeFromCart(itemToRemove);
   };
 
@@ -99,7 +98,6 @@ class Cart extends Component {
     const { coupons } = this.props;
     const [coupon] =
       coupons && coupons.filter((item) => item.name === this.state.couponName);
-    console.log(coupon);
     const cartPrice = this.props.items.cartPrice;
 
     if (coupon) {
@@ -206,9 +204,6 @@ const OrderSummary = (ownProps) => {
     ? ownProps.handleDiscnt(regPrice)
     : regPrice;
   const deliveryPrice = ownProps.state.deliveryPrice;
-  console.log(ownProps);
-  console.log(regPrice);
-  console.log(price);
   return (
     <Grid container>
       <Grid item xs={12} sm={12} md={12} lg={12}>

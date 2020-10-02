@@ -28,7 +28,6 @@ export const addDreamcatcher = (dreamcatcher) => {
 
 export const addToCart = (props, amount) => {
   const dreamcatcher = props.dreamcatcher;
-  console.log(amount);
   return (dispatch) => dispatch({ type: "ADD_TO_CART", dreamcatcher, amount });
 };
 
