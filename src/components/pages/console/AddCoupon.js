@@ -30,8 +30,6 @@ class AddCoupon extends Component {
   };
   handleChange = (event) => {
     const val = event.target.value;
-    console.log(event);
-    console.log(val);
     if (isNaN(val)) {
       this.setState({
         name: val,
@@ -43,18 +41,19 @@ class AddCoupon extends Component {
     }
   };
   handleSelect = (value) => {
-    console.log(value);
-
     this.setState({
       name: value.value,
     });
   };
+
   handleSubmit = (event) => {
     this.props.addCoupon(this.state);
   };
+
   handleUpdate = (event) => {
     this.props.updateCoupon(this.state);
   };
+
   handleDelete = (event) => {
     this.props.deleteCoupon(this.state);
   };
