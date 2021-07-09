@@ -27,12 +27,12 @@ function Footer() {
         </Grid>
       </div>
 
-      <div className="footer-copyright" dir="ltr">
-        <div className="container center-align  black-text copy-right">
-          <b>&copy;</b>2020 Dreamcatcher by Hila
+      <div className="footer-copyright container center-align copy-right" dir="ltr">
+        <div>
+          <span style={{ fontSize: "1.2rem" }}>&copy; 2021 Dreamcatcher by Hila</span>
         </div>
-        <div className="container center-align  black-text copy-right">
-          <a className={classes.devCredit} href="mailto:sagikorzak@gmail.com">
+        <div className="container center-align  black-text ">
+          <a className={classes.devCredit} href="https://www.sagikor.xyz">
             created by sagi korzack
           </a>
         </div>
@@ -100,7 +100,7 @@ const Media = (props) => {
 const useStyles = makeStyles({
   devCredit: {
     textDecoration: "none",
-    fontSize: "0.9rem",
+    fontSize: "1.1rem",
     color: "black",
     "&:hover": {
       color: "grey",

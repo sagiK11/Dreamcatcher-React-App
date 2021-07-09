@@ -1,10 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200&display=swap');
 
 .media {
   text-decoration-line: underline;
   text-decoration-color: #c7dbee;
   color: black;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 900;
 }
 
 .media:hover {
@@ -18,5 +19,7 @@
 }
 
 .copy-right {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+  color: black;
+  font-weight: 900;
 }
